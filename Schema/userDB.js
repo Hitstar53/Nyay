@@ -64,24 +64,64 @@ const UserSchema = new mongoose.Schema(
             type: String,
             default: "user",
         },
-        caseTitle: {
-            type: String,
-            max: 50
+        case: {
+            caseTitle: {
+                type: String,
+                max: 50
+            },
+            caseDetails: {
+                caseNumber: {
+                    type: String,
+                    max: 50
+                },
+                caseType: {
+                    type: String,
+                    max: 50
+                },
+                caseDescription: {
+                    type: String,
+                    max: 1000
+                },
+                caseFilingDate: {
+                    type: Date,
+                    required: true,
+                },
+                caseFilingCourt: {
+                    type: String,
+                    max: 50
+                },
+            },
+            caseStatus: {
+                type: String,
+                max: 50
+            },
+            caseFiles: {
+                type: Array,
+                default: [],
+            },
+            caseJudge: {
+                type: String,
+                max: 50
+            },
+            caseLawyer: {
+                type: String,
+                max: 50
+            },
+            caseOpponent: {
+                type: String,
+                max: 50
+            },
+            caseOpponentLawyer: {
+                type: String,
+                max: 50
+            },
+            caseHearingDates: {
+                type: Array,
+                default: [],
+            }
         },
-        caseDetails: {
-            type: String,
-            max: 50
-        },
-        caseStatus: {
-            type: String,
-            max: 50
-        },
-        caseFiles: {
-            type: Array,
-            default: [],
-        },
-        appointment: {
-            appointmentDate: {
+        appointments: {
+            date: {
                 type: Date,
                 required: true,
             },
