@@ -1,24 +1,38 @@
-const mongoose = require('mongoose')
-const appointmentSchema = mongoose.Schema({
-    client: {
-        type: String,
-        required: true
-    },
-    description: { 
-        type : String, 
-        required:true
-    },
-    lawyer: {
-        type:String,
-        required:true
-    },
-    aptDate:{
-        type:Date,
-        required:true
-    },
-},
-{
-    collection: "Appointments"
-})
+import mongoose from "mongoose";
 
-module.exports = mongoose.model("Appointments", appointmentSchema)
+const appointmentSchema = mongoose.Schema(
+    {
+        clientName: {
+            type: String,
+            required: true
+        },
+        clientEmail: {
+            type: String,
+            required: true
+        },
+        clientPhone: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+            required: true
+        },
+        lawyerName: {
+            type: String,
+            required: true
+        },
+        aptDate: {
+            type: Date,
+            // required: true
+        },
+    },
+    {
+        timestamps: true,
+    },
+    {
+        collection: "appointments"
+    }
+);
+
+export const Appointment = mongoose.model("Appointment", appointmentSchema);

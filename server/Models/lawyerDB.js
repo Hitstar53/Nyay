@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const LawyerSchema = new mongoose.Schema(
+const lawyerSchema = new mongoose.Schema(
   {
     personalInfo: [
       {
@@ -182,7 +182,11 @@ const LawyerSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
+  {
+    collection: 'lawyers'
+  },
 );
 
-module.exports = mongoose.model("Lawyer", LawyerSchema);
+export const Lawyer = mongoose.model("Lawyer", lawyerSchema);
+
