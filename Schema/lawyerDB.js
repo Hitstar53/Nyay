@@ -169,5 +169,5 @@ const LawyerSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-42;
+
 module.exports = mongoose.model("Lawyer", LawyerSchema);
