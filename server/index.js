@@ -1,25 +1,16 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import bodyParser from 'body-parser'
-import cors from 'cors'
-import dotenv from 'dotenv'
-import userRouter from './Routes/User.js'
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import connectDB from './Config/dbSetup.js';
 
 /* setting up server */
 const app = express()
 dotenv.config()
-app.use(bodyParser.json({limit: "30mb", extended: true}))
-app.use(bodyParser.urlencoded({limit: "30mb", extended: true}))
 app.use(cors())
+const PORT = process.env.PORT || 5000
+connectDB()
 
-/* setting up database and starting the server 
-  SET YOUR MONGO URL AND PORT IN .env FILE */
-
-mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true}).then(
-    app.listen(process.env.PORT, () => console.log(`Server running at: http://localhost:${process.env.PORT}`))
-).catch((error) => console.log(error.message))
-
-/* setting up routes */
-
-// set up your routes here
-app.use('/api/user', userRouter)
+app.use( express.urlencoded({extended : true }));
+app.listen(PORT,() => {console.log(`Server Started On http://localhost:${PORT}`)})
+app.use(express.json({limit:'5mb'}))
