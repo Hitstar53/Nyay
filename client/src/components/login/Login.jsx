@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useGoogleLogin, GoogleLogin } from "@react-oauth/google";
-import styles from "./Login.module.css";
 import axios from "axios";
-import ServerUrl from "../../constants.js"
+import Lottie from "lottie-react";
+import animationData from "../../assets/login-animation.json";
+import styles from "./Login.module.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Login = () => {
         <div className={styles.header}>
           <h1 className={styles.title}>Welcome to Nyay!</h1>
         </div>
-        <button className={styles.loginButt} onClick={() => login()} >
+        <button className={styles.loginButt} onClick={() => login()}>
           <i
             className="fa-brands fa-google"
             style={{ marginRight: "10px" }}
@@ -43,8 +44,11 @@ const Login = () => {
             className="fa-brands fa-google"
             style={{ marginRight: "10px" }}
           ></i>
-          Login as User
+          Login as Client
         </button>
+      </div>
+      <div className="login-animation w-72 md:w-[25rem]">
+        <Lottie animationData={animationData} />
       </div>
     </div>
   );

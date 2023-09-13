@@ -4,7 +4,7 @@ import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "react-responsive";
-import MiniDrawer from "../components/UI/MiniDrawer";
+import NavBar from '../components/UI/Navbar';
 import { Outlet, useNavigation } from 'react-router-dom'
 
 const RootLayout = () => {
@@ -27,15 +27,13 @@ const RootLayout = () => {
 
     return (
       <Box
-        sx={{ display: "flex", height: "100vh", background: "var(--bg-color)" }}
+        sx={{ height: "100vh", background: "var(--bg-color)" }}
       >
-        <MiniDrawer open={open} setOpen={setOpen} />
+        <NavBar />
         <Box
           component="main"
           sx={{
-            display: isMobile && open ? "none" : "block",
             flexGrow: 1,
-            marginTop: 8,
             overflowX: "hidden",
             backgroundColor: "var(--bg-color)",
           }}
@@ -44,8 +42,6 @@ const RootLayout = () => {
               <Backdrop
                 sx={{
                   color: "#fff",
-                  marginLeft: open ? "240px" : "30px",
-                  marginTop: "64px",
                 }}
                 open={true}
               >
