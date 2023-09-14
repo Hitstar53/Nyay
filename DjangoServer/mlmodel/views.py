@@ -8,19 +8,19 @@ import pandas as pd
 
 # Create your views here.
 
-
 class ResearchView(APIView):
     def post(self, request):
         # text = request.data.get("prompt")
         text = input()
         dictionary = legal.recommendcases(text)
-        print(dictionary)
+        # print(dictionary)
         return Response({"message": "Got some data!", "data": dictionary}) 
 
 class RecommendView(APIView):
     def post(self, request):
-        # text = request.data.get("prompt")
-        text = input()
+        text = request.data.get("prompt")
+        # text = input()
         dictionary = recommendations.calc(text)
-        print(dictionary)
+        # print(dictionary)
+        #send a response with status code 200 (OK)
         return Response({"message": "Got some data!", "data": dictionary})

@@ -14,8 +14,9 @@ from sklearn.metrics.pairwise import linear_kernel
 
 def get_recommendations(user_problems_df, top_n=5):
   legal_practitioners_df = pd.read_csv('legal_practitioners.csv')
+  legal_practitioners_df = legal_practitioners_df.dropna(subset=['Description'])
   tfidf_vectorizer = TfidfVectorizer(stop_words='english')
-  user_problems_matrix = tfidf_vectorizer.fit_transform(user_problems_df['Problem'])
+  user_problems_matrix = tfidf_vectorizer.fit_transform(user_problems_df['Problem'].values.astype('U'))
   legal_practitioners_matrix = tfidf_vectorizer.transform(legal_practitioners_df['Description'])
   cosine_sim = linear_kernel(user_problems_matrix, legal_practitioners_matrix)
   sim_scores = list(enumerate(cosine_sim[0]))

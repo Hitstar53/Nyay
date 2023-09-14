@@ -182,30 +182,39 @@ export default function NavBar(props) {
             }}
         >
         <List>
-          <ListItem key="Dashboard" disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <SpaceDashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem key="Edit Profile" disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <EditNoteRoundedIcon />
-              </ListItemIcon>
-              <ListItemText primary="Edit Profile" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem key="Chat" disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <ChatRoundedIcon />
-              </ListItemIcon>
-              <ListItemText primary="Chat" />
-            </ListItemButton>
-          </ListItem>
+          <NavLink to="/lawyer/dashboard" style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem key="Dashboard" disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <SpaceDashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
+          <NavLink
+            to="/lawyer/profile"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <ListItem key="Edit Profile" disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <EditNoteRoundedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Edit Profile" />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
+          <NavLink to="/lawyer/messages" style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem key="Chat" disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ChatRoundedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Chat" />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
         </List>
         <List>
             <ListItem key="Logout" disablePadding>
@@ -265,9 +274,11 @@ export default function NavBar(props) {
                   }}
                 >
                   {navItems.map((item) => (
-                    <MenuItem key={item} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{item}</Typography>
-                    </MenuItem>
+                    <NavLink to={`/${item.toLowerCase()}`} style={{ textDecoration: "none", color: "inherit" }}>
+                      <MenuItem key={item} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">{item}</Typography>
+                      </MenuItem>
+                    </NavLink>
                   ))}
                 </Menu>
               </Box>
@@ -302,20 +313,25 @@ export default function NavBar(props) {
                 }}
               >
                 {navItems.map((item) => (
-                  <Button
-                    key={item}
-                    sx={{
-                      color: "#000",
-                      fontWeight: 700,
-                      textTransform: "none",
-                      mr: 2,
-                      "&:hover": {
-                        borderBottom: "3px solid #000",
-                      },
-                    }}
+                  <NavLink
+                    to={`/${item.toLowerCase()}`}
+                    style={{ textDecoration: "none", color: "inherit" }}
                   >
-                    {item}
-                  </Button>
+                    <Button
+                      key={item}
+                      sx={{
+                        color: "#000",
+                        fontWeight: 700,
+                        textTransform: "none",
+                        mr: 2,
+                        "&:hover": {
+                          borderBottom: "3px solid #000",
+                        },
+                      }}
+                    >
+                      {item}
+                    </Button>
+                  </NavLink>
                 ))}
               </Box>
               <IconButton

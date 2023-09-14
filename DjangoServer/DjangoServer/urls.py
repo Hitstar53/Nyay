@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from mlmodel.views import ResearchView, RecommendView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("mlmodel.urls")),
+    path('', ResearchView.as_view(), name="research"),
+    path('recommend/', RecommendView.as_view(), name="recommend"),
 ]
