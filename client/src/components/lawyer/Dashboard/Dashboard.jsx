@@ -46,17 +46,23 @@ const Dashboard = () => {
             </ThemeProvider>
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           <h1 className="text-lg sm:text-2xl sm:p-1 font-semibold heading">
             Your Active Cases
           </h1>
-          <ActiveCase />
+          <div className="flex flex-col gap-8">
+            <ActiveCase />
+            <ActiveCase />
+          </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           <h1 className="text-lg sm:text-2xl sm:p-1 font-semibold heading">
             Your Completed Cases
           </h1>
-          <PastCase />
+          <div className="flex flex-col gap-8">
+            <PastCase />
+            <PastCase />
+          </div>
         </div>
       </div>
     );

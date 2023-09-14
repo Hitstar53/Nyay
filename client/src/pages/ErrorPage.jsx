@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useRouteError, useNavigate } from "react-router-dom";
 import { Info } from "@mui/icons-material";
 import Lottie from "lottie-react";
-import animationData from "../assets/page-not-found-2.json";
+import animationData from "../assets/animations/page-not-found-2.json";
 
 const ErrorPage = () => {
   const navigate = useNavigate();

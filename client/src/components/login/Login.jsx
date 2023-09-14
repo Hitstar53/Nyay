@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useGoogleLogin, GoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import Lottie from "lottie-react";
-import animationData from "../../assets/login-animation.json";
+import animationData from "../../assets/animations/login-animation.json";
 import styles from "./Login.module.css";
 
 const Login = () => {

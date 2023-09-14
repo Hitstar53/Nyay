@@ -1,0 +1,82 @@
+.container {
+    min-height: calc(100vh - 64px);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.searchbar input {
+    width: 100%;
+    outline: none;
+    padding: 1rem 1.5rem;
+    border-radius: 100vw;
+    border: 1px solid var(--primary-color);
+}
+
+.searchbar input:focus {
+    border-color: var(--primary-color);
+}
+
+.searchbar button {
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 100vw;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.results {
+    margin-top: 2rem;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.viewbtn {
+    padding: 0.25rem 1rem;
+    border-radius: 100vw;
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.viewbtn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}

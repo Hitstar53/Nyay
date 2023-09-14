@@ -6,6 +6,9 @@ import ErrorPage from "./pages/ErrorPage";
 import Login from "./components/login/Login";
 import Home from "./components/home/Home";
 import Dashboard from './components/lawyer/Dashboard/Dashboard';
+import ResearchAid from './components/lawyer/Research/ResearchAid';
+import Probono from './components/lawyer/Probono/Probono';
+import FindLawyer from './components/user/findLawyer/FindLawyer';
 import './App.css'
 
 const router = createBrowserRouter([
@@ -14,17 +17,20 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     element: <RootLayout />,
     children: [
-      { index: true, element: <Login /> },
+      { path: "login", element: <Login /> },
+      { path: "home", element: <Home /> },
       {
         path: "user",
         children: [
-          { path: "home", element: <Home /> },
+          { path: "findlawyer", element: <FindLawyer /> },
         ],
       },
       {
         path: "lawyer",
         children: [
           { path: "dashboard", element: <Dashboard /> },
+          { path: "research", element: <ResearchAid /> },
+          { path: "probono", element: <Probono /> },
         ],
       },
     ],
