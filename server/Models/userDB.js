@@ -24,8 +24,8 @@ const userSchema = new mongoose.Schema(
             type: String,
         },
         dob: {
-            type: Date,
-            // required: true,
+            type: String,
+            required: true,
         },
         password: {
             type: String,

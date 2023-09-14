@@ -2,26 +2,27 @@ import mongoose from "mongoose";
 
 const lawyerSchema = new mongoose.Schema(
   {
+    fullName: {
+      type: String,
+      required: true,
+      min: 3,
+      max: 30,
+    },
+    email: {
+      type: String,
+      required: true,
+      max: 50,
+      unique: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+      max: 10,
+      unique: true,
+    },
+
     personalInfo: [
       {
-        fullName: {
-          type: String,
-          required: true,
-          min: 3,
-          max: 30,
-        },
-        email: {
-          type: String,
-          required: true,
-          max: 50,
-          unique: true,
-        },
-        phone: {
-          type: String,
-          required: true,
-          max: 10,
-          unique: true,
-        },
         officePhone: {
           type: String,
           max: 50,
@@ -41,7 +42,7 @@ const lawyerSchema = new mongoose.Schema(
         },
         password: {
           type: String,
-          required: true,
+          // required: true,
           min: 6,
           max: 8,
         },

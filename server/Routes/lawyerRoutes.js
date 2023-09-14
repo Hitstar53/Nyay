@@ -1,7 +1,11 @@
 import express from 'express';
-import router from express.Router();
-import {getApt} from '../Controllers/aptController.js';
+// import {getApt} from '../Controllers/aptController.js';
+import {createLawyer, getLawyer, updateLawyer, deleteLawyer} from '../Controllers/lawyerController.js';
 
-router.route('/appointments').get(getApt);
+const router = express.Router();
+router.route('/register').post(createLawyer);
+router.route('/').get(getLawyer);
+router.route('/:id').put(updateLawyer).delete(deleteLawyer);
+// router.route('/appointments').get(getApt);
 
 export default router;
