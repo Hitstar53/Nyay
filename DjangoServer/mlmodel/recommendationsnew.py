@@ -10,33 +10,34 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-df_legal_problems = pd.read_csv('legal_problems.csv')
-df_lawyers = pd.read_csv('lawyers.csv')
-
-categories = [
-    "Bankruptcy Lawyer",
-    "Business (Corporate) Lawyer",
-    "Criminal Defense Lawyer",
-    "Estate Planning Lawyer",
-    "Family Lawyer",
-    "Immigration Lawyer",
-    "Intellectual Property Lawyer",
-    "Personal Injury Lawyer",
-    "Tax Lawyer",
-    "Constitutional Lawyer",
-    "Entertainment Lawyer",
-    "Employment and Labor Lawyer"
-]
-
-category_to_id = {category: idx for idx, category in enumerate(categories)}
-
-# Create a TF-IDF vectorizer
-tfidf_vectorizer = TfidfVectorizer(stop_words='english')
-
-# Fit and transform the text data
-tfidf_matrix = tfidf_vectorizer.fit_transform(df_legal_problems['Legal Problem Text'])
 
 def suggest_lawyers(user_legal_problem, num_lawyers=5):
+    df_legal_problems = pd.read_csv('legal_problems.csv')
+    df_lawyers = pd.read_csv('lawyers.csv')
+
+    categories = [
+        "Bankruptcy Lawyer",
+        "Business (Corporate) Lawyer",
+        "Criminal Defense Lawyer",
+        "Estate Planning Lawyer",
+        "Family Lawyer",
+        "Immigration Lawyer",
+        "Intellectual Property Lawyer",
+        "Personal Injury Lawyer",
+        "Tax Lawyer",
+        "Constitutional Lawyer",
+        "Entertainment Lawyer",
+        "Employment and Labor Lawyer"
+    ]
+
+    category_to_id = {category: idx for idx, category in enumerate(categories)}
+
+    # Create a TF-IDF vectorizer
+    tfidf_vectorizer = TfidfVectorizer(stop_words='english')
+
+    # Fit and transform the text data
+    tfidf_matrix = tfidf_vectorizer.fit_transform(df_legal_problems['Legal Problem Text'])
+
     # Transform user's legal problem into a TF-IDF vector
     user_legal_problem_tfidf = tfidf_vectorizer.transform([user_legal_problem])
 
@@ -58,16 +59,4 @@ def suggest_lawyers(user_legal_problem, num_lawyers=5):
     # Get the top N lawyers
     top_lawyers = filtered_lawyers.head(num_lawyers)
 
-    return predicted_category, top_lawyers
-
-user_legal_problem = input("Enter your legal problem: \n")
-
-predicted_category, top_5_lawyers = suggest_lawyers(user_legal_problem, num_lawyers=5)
-
-print(f"Predicted Category: {predicted_category}")
-print("\nTop 5 Lawyers:")
-for idx, row in top_5_lawyers.iterrows():
-    print(f"Lawyer: {row['Lawyer']}")
-    print(f"User Rating: {row['User Rating']:.2f}")
-    print(f"Description: {row['Description']}")
-    print(f"Experience: {row['Experience']} years\n")
+    return {"category" : predicted_category, "lawyers" : top_lawyers}
