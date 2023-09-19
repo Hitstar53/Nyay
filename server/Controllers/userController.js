@@ -18,6 +18,7 @@ const createUser = asyncHandler ( async (req, res) => {
             dob: parsedDob
         })
         res.status(200).json(user);
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -64,12 +65,15 @@ const deleteApt = asyncHandler( async (req, res) => {
     try{
         const apt = await Appointment.findById(req.params.id);
         const {clientName, lawyerName} = apt;
+
         const client = await User.findOne({fullName: clientName});
         await client.updateOne({$pull: {appointment: req.params.id}});
         const lawyer = await Lawyer.findOne({fullName: lawyerName});
         await lawyer.updateOne({$pull: {appointment: req.params.id}});
+        
         await Appointment.findOneAndDelete({_id: req.params.id});
         res.status(200).json("Appointment has been deleted.");
+
     } catch(err) {
         return res.status(500).json(err);
     }
