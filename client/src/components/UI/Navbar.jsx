@@ -21,6 +21,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import GavelSharpIcon from "@mui/icons-material/GavelSharp";
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
@@ -31,8 +32,10 @@ import Button from "@mui/material/Button";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
+import TrackChangesIcon from "@mui/icons-material/TrackChanges";
+import GradeRoundedIcon from "@mui/icons-material/GradeRounded";
 
-const navItems = ["Home", "Feed", "Research", "Probono"];
+const navItems = ["Home", "Find Lawyers", "Feed", "Research", "Probono"];
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -126,17 +129,26 @@ export default function NavBar(props) {
     };
     const list = (anchor) => (
       <Box
-        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 272 }}
         role="presentation"
-        onClick={toggleDrawer(anchor, false)}
-        onKeyDown={toggleDrawer(anchor, false)}
       >
+        <CloseIcon
+          onClick={toggleDrawer(anchor, false)}
+          sx={{
+            position: "absolute",
+            top: "1rem",
+            right: "1rem",
+            cursor: "pointer",
+            color: "var(--secondary-color)",
+            backgroundColor: "var(--bg-color)",
+          }}
+        />
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            mt: 2,
+            mt: 4,
           }}
         >
           <IconButton
@@ -147,15 +159,14 @@ export default function NavBar(props) {
           >
             <AccountCircle
               sx={{
-                height: 60,
-                width: 60,
+                height: 90,
+                width: 90,
               }}
             />
           </IconButton>
             <Typography variant="h6" component="div"
                 sx={{
                     fontWeight: 700,
-                    mb: 1,
                 }}
             >
                 Hatim Sawai
@@ -165,12 +176,49 @@ export default function NavBar(props) {
                     opacity: 0.6,
                     fontSize: "0.8rem",
                     textAlign: "center",
-                    mb: 2,
-                    width: "80%",
+                    mb: 3,
                 }}
             >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, tempore.
+                <span style={{ color: "var(--primary-color)" }}>Lawyer</span>
             </Typography>
+            <Box
+              sx={{
+                mb: 2,
+                width: "87%",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+              >
+              <Typography variant="body2" component="div"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    fontWeight: 700,
+                    fontSize: "1rem",
+                  }}
+                  >
+                <TrackChangesIcon sx={{ fontSize: "1.5rem", mr: 0.5 }} />
+                94.4%
+              </Typography>
+              <Divider orientation="vertical" flexItem
+                  sx={{
+                    width: "0.125rem",
+                    height: "1.5rem",
+                    backgroundColor: "var(--text-color)",
+                  }}
+                  />
+              <Typography variant="body2" component="div"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    fontWeight: 700,
+                    fontSize: "1rem",
+                  }}
+              >
+                <GradeRoundedIcon sx={{ fontSize: "1.5rem", mr: 0.5 }} />
+                8.7/10
+              </Typography>
+            </Box>
         </Box>
         <Divider />
         <Box
@@ -274,7 +322,7 @@ export default function NavBar(props) {
                   }}
                 >
                   {navItems.map((item) => (
-                    <NavLink to={`/${item.toLowerCase()}`} style={{ textDecoration: "none", color: "inherit" }}>
+                    <NavLink to={`/user/${item.toLowerCase()}`} style={{ textDecoration: "none", color: "inherit" }}>
                       <MenuItem key={item} onClick={handleCloseNavMenu}>
                         <Typography textAlign="center">{item}</Typography>
                       </MenuItem>
@@ -303,7 +351,12 @@ export default function NavBar(props) {
               <Typography
                 variant="h6"
                 component="div"
-                sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+                sx={{ 
+                  flexGrow: 1,
+                  fontWeight: 700,
+                  fontSize: "1.5rem",
+                  display: { xs: "none", sm: "block" } 
+                }}
               >
                 NYAY
               </Typography>
@@ -314,7 +367,7 @@ export default function NavBar(props) {
               >
                 {navItems.map((item) => (
                   <NavLink
-                    to={`/${item.toLowerCase()}`}
+                    to={`/user/${item.toLowerCase()}`}
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
                     <Button
@@ -322,10 +375,11 @@ export default function NavBar(props) {
                       sx={{
                         color: "#000",
                         fontWeight: 700,
+                        fontSize: "1rem",
                         textTransform: "none",
                         mr: 2,
                         "&:hover": {
-                          borderBottom: "3px solid #000",
+                          borderBottom: "2px solid #000",
                         },
                       }}
                     >
@@ -343,8 +397,8 @@ export default function NavBar(props) {
               >
                 <AccountCircle
                   sx={{
-                    height: 40,
-                    width: 40,
+                    height: 50,
+                    width: 50,
                   }}
                 />
               </IconButton>
