@@ -24,7 +24,19 @@ const appointmentSchema = mongoose.Schema(
         },
         aptDate: {
             type: Date,
-            // required: true
+            required: true
+        },
+        status: {
+            type: String,
+            default: "Pending"
+        },
+        startTime: {
+            type: String,
+            required: true
+        },
+        endTime: {
+            type: String,
+            required: true
         },
     },
     {

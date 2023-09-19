@@ -140,6 +140,12 @@ const userSchema = new mongoose.Schema(
                 ref: "Appointments",
             },
         ],
+        updates: [
+            {
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "Tracker",
+            },
+        ],
         ratings: [
             {
                 type: mongoose.Schema.Types.ObjectId,
