@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "@studio-freight/lenis": "^1.0.22",
     "axios": "^1.5.0",
+    "create-vite": "^4.4.1",
     "dayjs": "^1.11.9",
     "framer-motion": "^10.16.4",
     "lottie-react": "^2.4.0",

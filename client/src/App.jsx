@@ -10,6 +10,7 @@ import ResearchAid from './components/lawyer/Research/ResearchAid';
 import Probono from './components/lawyer/Probono/Probono';
 import FindLawyer from './components/user/findLawyer/FindLawyer';
 import './App.css'
+import Profile from './components/lawyer/Profile/Profile';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
           { path: "dashboard", element: <Dashboard /> },
           { path: "research", element: <ResearchAid /> },
           { path: "probono", element: <Probono /> },
+          { path: "profile", element: <Profile /> },
         ],
       },
     ],
