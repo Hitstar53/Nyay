@@ -202,6 +202,19 @@ div{
   margin-top:1%;
 }
 `
+const WorkExpContainer= styled.div`
+ margin:0.7rem 0 ;
+  width: 44rem;
+  height: 12rem;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+
+`
+
+
 
 const LawyerProfile = () => {
   return (
@@ -293,6 +306,11 @@ const LawyerProfile = () => {
     </Education>
     </EduDesc>
     </EducationContainer>
+
+
+    <WorkExpContainer>
+
+    </WorkExpContainer>
     </div>
   )
 }
