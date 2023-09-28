@@ -12,7 +12,7 @@ background-color:blue;
 `
 const Container=styled.div`
 width:100%;
-height:160vh;
+height:200vh;
 display:flex;
 background-color:#f6f8faff;
 align-items:center;
@@ -20,22 +20,26 @@ flex-direction:column;
 `
 const SearchContainer=styled.div`
     width:80%;
-    height:25%;
+    height:13%;
     background-color:#e5f1fcff;
     display:flex;
     flex-direction:column;
     justify-content:center;
+    border-radius:10px;
+    margin-top:-4%; 
+    box-shadow: 0 0 10px  hsl(0, 0%, 81%);
     h1{
-        font-weight:500;
-        font-size:17px;
+        font-weight:700;
+        font-size:20px;
+        margin-left:2%;
+        margin-bottom:0.5%;
     } 
 `
-const Search = styled.textarea`
-    resize:none;
-    margin:1% 0;
-    border:none;
-    border-radius:10px;
-    width:70%;
+const Search = styled.div`
+    
+    width:100%;
+    display:flex;
+
     &:focus{
         outline:none;
         border:1px solid #0d265c;
@@ -46,17 +50,20 @@ width:80%;
 height:7%;
 display:flex;
 align-items:center;
-font-size:13px;
+font-size:14px;
 gap:20px;
+margin-top:1%;
 div{
     width:10%;
-    height:70%;
+    height:60%;
     font-weight:600;
     border-radius:20px;
     border:1px solid  #0d265c;
     display:flex;
     justify-content:center;
     align-items:center;
+    background-color:white;
+
 }
 .sort{
     background-color:#e5f1fcff;
@@ -117,24 +124,22 @@ const FindLawyer = () => {
         <Hero/>
         <Container>
             <SearchContainer>
-                <h1>Type in your Case details</h1>
-                <form>
+                <h1 >Type in your Case details</h1>
+                    <Search>
                     <TextField
                         placeholder='Type in your case details'
-                        multiline
-                        rows={4}
                         variant='outlined'
-                        style={{width:'70%',borderRadius:'10px',marginRight:'2%'}}
+                        style={{width:'80%',borderRadius:'10px',backgroundColor:'white',marginLeft:'2%'}}
                         onChange={handleChange}
                     />
                     <Button
+                        content='Search'
                         variant='contained'
-                        style={{width:'20%',height:'40px',borderRadius:'10px',backgroundColor:'#0d265c',color:'white',margin:'2%'}}
+                        style={{width:'15%',height:'100%',borderRadius:'20px',backgroundColor:'#0d265c',color:'white',marginLeft:'1%'}}
                         onClick={handleSubmit}
-                    >
-                        Search
-                    </Button>
-                </form>
+                    />
+                </Search>
+               
             </SearchContainer>
 
             <Filter>

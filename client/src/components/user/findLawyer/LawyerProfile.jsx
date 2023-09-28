@@ -154,8 +154,8 @@ align-items:center;
 font-size:13px;
 gap:1rem;
 div{
-    padding:6px;
-    height:50%;
+    padding:2%;
+    height:90%;
     font-weight:500;
     font-size:0.8rem;
     border-radius:20px;
@@ -168,6 +168,54 @@ div{
     background-color:#e5f1fcff;
 }
 `
+const EducationContainer = styled.div`
+margin:0.7rem 0 ;
+  width: 44rem;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+`
+
+const EduDesc = styled.div`
+width:90%;
+height:4.5rem;
+display:flex;
+margin-bottom:1%;
+
+`
+const EduImg = styled.img`
+width:12%;
+height:100%;
+background-color:yellow;
+`
+const Education = styled.div`
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+margin-left:2%;
+div{
+  font-size:12px;
+  margin-top:1%;
+}
+`
+const WorkExpContainer= styled.div`
+ margin:0.7rem 0 ;
+  width: 44rem;
+  height: 12rem;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+
+`
+
+
+
 const LawyerProfile = () => {
   return (
     <div>
@@ -230,6 +278,39 @@ const LawyerProfile = () => {
             <div># Marathi</div>
         </ExpertiseLang>
     </ExpertiseLangContainer>
+
+    <EducationContainer>
+    <Title>Education</Title>
+    <EduDesc>
+    <EduImg></EduImg>
+    <Education>
+      <h2>St. Xaviers</h2>
+      <div> MBA</div>
+      <div>2009-2010</div>
+    </Education>
+    </EduDesc>
+    <EduDesc>
+    <EduImg></EduImg>
+    <Education>
+      <h2>St. Xaviers</h2>
+      <div> MBA</div>
+      <div>2009-2010</div>
+    </Education>
+    </EduDesc>
+    <EduDesc>
+    <EduImg></EduImg>
+    <Education>
+      <h2>St. Xaviers</h2>
+      <div> MBA</div>
+      <div>2009-2010</div>
+    </Education>
+    </EduDesc>
+    </EducationContainer>
+
+
+    <WorkExpContainer>
+
+    </WorkExpContainer>
     </div>
   )
 }
