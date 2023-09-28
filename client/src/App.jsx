@@ -19,10 +19,12 @@ const router = createBrowserRouter([
     children: [
       { path: "login", element: <Login /> },
       { path: "home", element: <Home /> },
+      { index: true, element: <Home /> },
       {
         path: "user",
         children: [
-          { path: "findlawyer", element: <FindLawyer /> },
+          { path: "home", element: <Home /> },
+          { path: "find lawyers", element: <FindLawyer /> },
         ],
       },
       {
@@ -39,14 +41,14 @@ const router = createBrowserRouter([
 
 const App = () => {
   const theme = createTheme({
-    // typography: {
-    //   fontFamily: ["Poppins", "sans-serif"].join(","),
-    // },
+    typography: {
+      fontFamily: ["Montserrat", "sans-serif"].join(","),
+    },
   });
   return (
-    // <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <RouterProvider router={router} />
-    // </ThemeProvider>
+    </ThemeProvider>
   );
 }
 

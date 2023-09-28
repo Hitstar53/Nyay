@@ -4,13 +4,8 @@ const appointmentSchema = mongoose.Schema(
     {
         clientName: {
             type: String,
-            required: true
         },
-        clientEmail: {
-            type: String,
-            required: true
-        },
-        clientPhone: {
+        lawyerName: {
             type: String,
             required: true
         },
@@ -18,13 +13,29 @@ const appointmentSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        lawyerName: {
+        aptDate: {
+            type: Date,
+            required: true
+        },
+        startTime: {
             type: String,
             required: true
         },
-        aptDate: {
-            type: Date,
-            // required: true
+        endTime: {
+            type: String,
+            required: true
+        },
+        client: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+        },
+        lawyer: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Lawyer",
+        },
+        status: {
+            type: String,
+            default: "Pending"
         },
     },
     {

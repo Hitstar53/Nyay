@@ -1,5 +1,7 @@
 import asyncHandler from 'express-async-handler';
 import {Lawyer} from '../Models/lawyerDB.js';
+import {User} from '../Models/userDB.js';
+import {Appointment} from '../Models/appointmentDB.js';
 // const bcrypt = require('bcrypt');
 
 const createLawyer = asyncHandler ( async (req, res) => {
@@ -55,4 +57,20 @@ const deleteLawyer = asyncHandler (async (req, res) => {
     }
 })
 
-export {createLawyer, getLawyer, updateLawyer, deleteLawyer};
+const deleteApt = asyncHandler( async (req, res) => {
+    try{
+        const apt = await Appointment.findById(req.params.id);
+        const {lawyerName, clientName} = apt;
+
+        const client = await User.findOne({fullName: clientName});
+        await client.updateOne({$pull: {appointment: req.params.id}});
+        const lawyer = await Lawyer.findOne({fullName: lawyerName});
+        await lawyer.updateOne({$pull: {appointment: req.params.id}});
+        await Appointment.findOneAndDelete({_id: req.params.id});
+        
+    } catch(err) {
+        return res.status(500).json(err);
+    }
+})
+
+export {createLawyer, getLawyer, updateLawyer, deleteLawyer, deleteApt};

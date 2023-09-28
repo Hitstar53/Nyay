@@ -20,43 +20,34 @@ const userSchema = new mongoose.Schema(
             max: 10,
             unique: true,
         },
-        gender: {
-            type: String,
+
+        personalInfo: {
+            gender: {
+                type: String,
+            },
+            dob: {
+                type: String,
+            },
+            password: {
+                type: String,
+                // required: true,
+                min: 6,
+            },
+            profilePicture: {
+                type: String,
+                default: "",
+            },
+            city: {
+                type: String,
+                max: 50
+            },
+            state: {
+                type: String,
+                max: 50
+            },
         },
-        dob: {
-            type: String,
-            required: true,
-        },
-        password: {
-            type: String,
-            // required: true,
-            min: 6,
-        },
-        profilePicture: {
-            type: String,
-            default: "",
-        },
-        isAdmin: {
-            type: Boolean,
-            default: false,
-        },
-        city: {
-            type: String,
-            max: 50
-        },
-        state: {
-            type: String,
-            max: 50
-        },
+
         languages: {
-            type: Array,
-            default: [],
-        },
-        rating: {
-            type: Number,
-            default: 0,
-        },
-        reviews: {
             type: Array,
             default: [],
         },
@@ -64,80 +55,11 @@ const userSchema = new mongoose.Schema(
             type: String,
             default: "user",
         },
-        case: [
-            {
-                caseDetails: [
-                    {
-                        caseTitle: {
-                            type: String,
-                            max: 100,
-                            required: true,
-                            min: 3,
-                        },
-                        caseNumber: {
-                            type: String,
-                            max: 50
-                        },
-                        caseType: {
-                            type: String,
-                            max: 50
-                        },
-                        caseDescription: {
-                            type: String,
-                            max: 1000
-                        },
-                        caseFilingDate: {
-                            type: Date,
-                            required: true,
-                        },
-                        caseFilingCourt: {
-                            type: String,
-                            max: 50
-                        },
-                        lastHearing: {
-                            type: String,
-                            max: 50
-                        },
-                        nextHearing: {
-                            type: String,
-                            max: 50
-                        },
-                        caseStatus: {
-                            type: String,
-                            max: 50
-                        },
-                    },
-                ],
-                caseFiles: {
-                    type: Array,
-                    default: [],
-                },
-                caseJudge: {
-                    type: String,
-                    max: 50
-                },
-                caseLawyer: {
-                    type: String,
-                    max: 50
-                },
-                caseOpponent: {
-                    type: String,
-                    max: 50
-                },
-                caseOpponentLawyer: {
-                    type: String,
-                    max: 50
-                },
-                caseHearingDates: {
-                    type: Array,
-                    default: [],
-                },
-            },
-        ],
-        appointment: [
+
+        updates: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: "Appointments",
+                ref: "Tracker",
             },
         ],
         ratings: [
@@ -154,8 +76,14 @@ const userSchema = new mongoose.Schema(
         ],
         cases: [
             {
-              type: mongoose.Schema.Types.ObjectId,
-              ref: "Cases",
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Cases",
+            },
+        ],
+        appointment: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Appointments",
             },
         ],
     },
@@ -168,5 +96,3 @@ const userSchema = new mongoose.Schema(
 );
 
 export const User = mongoose.model("User", userSchema);
-
-// export default User;

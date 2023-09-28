@@ -1,5 +1,7 @@
 import asyncHandler from 'express-async-handler';
 import {User} from '../Models/userDB.js';
+import {Lawyer} from '../Models/lawyerDB.js';
+import { Appointment } from '../Models/appointmentDB.js';
 // const bcrypt = require('bcrypt');
 
 const createUser = asyncHandler ( async (req, res) => {
@@ -16,6 +18,7 @@ const createUser = asyncHandler ( async (req, res) => {
             dob: parsedDob
         })
         res.status(200).json(user);
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -58,4 +61,22 @@ const deleteUser = asyncHandler (async (req, res) => {
     }
 })
 
-export {createUser, getUser, updateUser, deleteUser};
+const deleteApt = asyncHandler( async (req, res) => {
+    try{
+        const apt = await Appointment.findById(req.params.id);
+        const {clientName, lawyerName} = apt;
+
+        const client = await User.findOne({fullName: clientName});
+        await client.updateOne({$pull: {appointment: req.params.id}});
+        const lawyer = await Lawyer.findOne({fullName: lawyerName});
+        await lawyer.updateOne({$pull: {appointment: req.params.id}});
+        
+        await Appointment.findOneAndDelete({_id: req.params.id});
+        res.status(200).json("Appointment has been deleted.");
+
+    } catch(err) {
+        return res.status(500).json(err);
+    }
+})
+
+export {createUser, getUser, updateUser, deleteUser, deleteApt};
