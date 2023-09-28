@@ -154,8 +154,8 @@ align-items:center;
 font-size:13px;
 gap:1rem;
 div{
-    padding:6px;
-    height:50%;
+    padding:2%;
+    height:90%;
     font-weight:500;
     font-size:0.8rem;
     border-radius:20px;
