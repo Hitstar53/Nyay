@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .categoryCard {
@@ -12,8 +12,8 @@
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
     font-weight: 500;
-    height: 10rem;
-    width: 8rem;
+    height: 8rem;
+    /* width: 8rem; */
     color: var(--text-dark);
     border-radius: 1rem;
     display: flex;
@@ -22,3 +22,4 @@
     justify-content: center;
     box-shadow: -0.3rem 0.4rem 1rem rgba(0, 0, 0, 0.2);
 }
+

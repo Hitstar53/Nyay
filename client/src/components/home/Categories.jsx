@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Categories.module.css'
 
-const Hero = (props) => {
+const Categories = (props) => {
   return (
     <div className={styles.categoryBlock}>
       <div className={styles.categoryCard}>cat1</div>
@@ -20,4 +20,4 @@ const Hero = (props) => {
   )
 }
 
-export default Hero
+export default Categories

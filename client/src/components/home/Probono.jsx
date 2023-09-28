@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Probono.module.css'
 
-const Hero = () => {
+const ProBono = () => {
   return (
     <div className={styles.probonoblock}>
       <div className={styles.timeline}>timeline</div>
@@ -12,4 +12,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default ProBono
