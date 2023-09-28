@@ -14,28 +14,42 @@ const data = {
 const Appointment = () => {
   return (
     <div className={styles.cardItem}>
-      <Avatar
-        alt={data.sender}
-        src={data.senderPhoto}
-        sx={{
-          width: "7rem",
-          height: "7rem",
-          marginRight: "2rem",
-          alignSelf: "center",
-        }}
-        className={styles.avatar}
-      />
-      <div className={styles.cardHeader}>
-        <h1>{data.sender}</h1>
+      <div className={styles.col1}>
+        <p>
+          {dayjs(data.date).format("ddd")}
+        </p>
+        <p className='text-4xl'>
+          {dayjs(data.date).format("DD")}
+        </p>
+        <p>
+          {dayjs(data.date).format("MMM")}
+        </p>
       </div>
-      <div className={styles.cardSubHeader}>
-        <p>{data.issue}</p>
-        <div className={styles.carddate}>
-          <CalendarTodayRoundedIcon sx={{ fontSize: "1.5rem" }} />
-          {dayjs(data.date).format("DD MMMM, YYYY")}
+      <div className={styles.col2}>
+        <p className='text-xl'>
+          {dayjs(data.date).format("hh:mm A")}
+        </p>
+        <p className='text-base font-normal'>
+          60 mins
+        </p>
+      </div>
+      <div className={styles.col3}>
+        <div className={styles.sender}>
+          <Avatar
+            alt={data.sender}
+            src={data.senderPhoto}
+            sx={{
+              width: "2rem",
+              height: "2rem",
+              alignSelf: "center",
+            }}
+            className={styles.avatar}
+          />
+          <h1>{data.sender}</h1>
         </div>
+        <p>{data.issue}</p>
       </div>
-      <div className={styles.cardBtn}>
+      <div className={styles.col4}>
         <button className={styles.accept}>Accept</button>
         <button className={styles.reject}>Reject</button>
       </div>

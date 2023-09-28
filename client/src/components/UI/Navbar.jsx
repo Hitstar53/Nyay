@@ -286,12 +286,17 @@ export default function NavBar(props) {
             color=""
             sx={
               {
-                // boxShadow: "none",
+                boxShadow: "none",
                 backgroundColor: "var(--bg-color)",
               }
             }
           >
-            <Toolbar>
+            <Toolbar
+              // sx={{
+              //   width: "80%",
+              //   margin: "0 auto",
+              // }}
+            >
               <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                 <IconButton
                   size="large"
@@ -343,7 +348,7 @@ export default function NavBar(props) {
                   textDecoration: "none",
                 }}
               >
-                NYAY
+                NYAAY
               </Typography>
               <GavelSharpIcon
                 sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
@@ -358,7 +363,7 @@ export default function NavBar(props) {
                   display: { xs: "none", sm: "block" } 
                 }}
               >
-                NYAY
+                NYAAY
               </Typography>
               <Box
                 sx={{

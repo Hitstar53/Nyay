@@ -1,0 +1,100 @@
+.recommendationCardLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.recommendationCardRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.img {
+  background-color: var(--secondary-color);
+  width: 20rem;
+  height: 15rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.yoe {
+  margin-bottom: 1.5rem;
+}
+
+.leftpills {
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.rightpills {
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.pill {
+  border: 1px solid var(--primary-color);
+  border-radius: 1rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.details {
+    text-align: right;
+}
+
+.star-wrapper {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  direction: rtl;
+  display: flex;
+}
+
+.star-wrapper a {
+  font-size: 4em;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.5s, transform 0.5s;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.star-wrapper a:hover {
+  color: gold;
+  transform: scale(1.3);
+}
+
+.s1:hover a {
+  color: gold;
+}
+.s2:hover a {
+  color: gold;
+}
+.s3:hover a {
+  color: gold;
+}
+.s4:hover a {
+  color: gold;
+}
+.s5:hover a {
+  color: gold;
+}

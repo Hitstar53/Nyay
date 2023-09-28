@@ -183,7 +183,7 @@ const EduDesc = styled.div`
 width:90%;
 height:4.5rem;
 display:flex;
-margin-bottom:1%;
+margin-bottom:2%;
 
 `
 const EduImg = styled.img`
@@ -197,9 +197,15 @@ display:flex;
 flex-direction:column;
 justify-content:space-between;
 margin-left:2%;
+color:var(--primary-color);
+h2{
+  font-weight:600;
+
+}
 div{
   font-size:12px;
   margin-top:1%;
+  font-weight:500;
 }
 `
 const WorkExpContainer= styled.div`
@@ -211,9 +217,13 @@ const WorkExpContainer= styled.div`
   display: flex;
   flex-direction: column;
   align-items:center;
-
 `
-
+const Wrapper= styled.div`
+width:90%;
+display:flex;
+flex-direction:column;
+margin-bottom:2%;
+` 
 
 
 const LawyerProfile = () => {
@@ -281,6 +291,7 @@ const LawyerProfile = () => {
 
     <EducationContainer>
     <Title>Education</Title>
+    <Wrapper>
     <EduDesc>
     <EduImg></EduImg>
     <Education>
@@ -289,6 +300,7 @@ const LawyerProfile = () => {
       <div>2009-2010</div>
     </Education>
     </EduDesc>
+
     <EduDesc>
     <EduImg></EduImg>
     <Education>
@@ -297,6 +309,7 @@ const LawyerProfile = () => {
       <div>2009-2010</div>
     </Education>
     </EduDesc>
+
     <EduDesc>
     <EduImg></EduImg>
     <Education>
@@ -305,11 +318,12 @@ const LawyerProfile = () => {
       <div>2009-2010</div>
     </Education>
     </EduDesc>
+    </Wrapper>
     </EducationContainer>
 
 
     <WorkExpContainer>
-
+    
     </WorkExpContainer>
     </div>
   )

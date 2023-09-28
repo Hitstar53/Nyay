@@ -10,58 +10,48 @@ import styles from "./Dashboard.module.css";
 
 const Dashboard = () => {
     const dashboard = styles.dashboard + " flex flex-col gap-8 p-8";
-    const Theme = createTheme({
-      palette: {
-        mode: "dark",
-      },
-    });
+    // const Theme = createTheme({
+    //   palette: {
+    //     mode: "dark",
+    //   },
+    // });
     return (
       <div className={dashboard}>
-        <h1 className="text-2xl sm:text-4xl font-semibold">Dashboard</h1>
+        <h1 className="text-xl sm:text-2xl font-bold">Dashboard</h1>
         <div className="flex justify-between gap-4">
           <div className="flex flex-col gap-4 w-3/4">
-            <h1 className="text-lg sm:text-2xl sm:p-1 font-semibold heading">
+            <h1 className="text-base sm:text-lg sm:p-1 font-semibold heading">
               Appointment Requests
             </h1>
             <Appointreq />
           </div>
           <div className="flex flex-col gap-4 w-1/4">
-            <h1 className="text-lg sm:text-2xl sm:p-1 font-semibold heading">
+            <h1 className="text-base sm:text-lg sm:p-1 font-semibold heading">
               Your Calendar
             </h1>
-            <ThemeProvider theme={Theme}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DateCalendar
                         sx={{
                             height: "100%",
                             borderRadius: "10px",
-                            backgroundColor: "#1F2937",
-                            color: "#fff",
+                            backgroundColor: "#fff",
                             transform: "scaleY(1.175) scaleX(1.1) translateY(7.5%)",
+                            boxShadow: "0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)",
                         }}
                         displayWeekNumber
                         views={["year", "month", "day"]}
                     />
                 </LocalizationProvider>
-            </ThemeProvider>
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <h1 className="text-lg sm:text-2xl sm:p-1 font-semibold heading">
+          <h1 className="text-base sm:text-lg sm:p-1 font-semibold heading">
             Your Active Cases
           </h1>
           <div className="flex flex-col gap-8">
             <ActiveCase />
             <ActiveCase />
-          </div>
-        </div>
-        <div className="flex flex-col gap-6">
-          <h1 className="text-lg sm:text-2xl sm:p-1 font-semibold heading">
-            Your Completed Cases
-          </h1>
-          <div className="flex flex-col gap-8">
-            <PastCase />
-            <PastCase />
+            <ActiveCase />
           </div>
         </div>
       </div>

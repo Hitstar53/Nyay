@@ -8,6 +8,7 @@ const Appointreq = () => {
       <div className={styles.inner}>
         <Appointment />
         <Appointment />
+        <Appointment />
       </div>
     </div>
   )
