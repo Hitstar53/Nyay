@@ -1,0 +1,63 @@
+.heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 3rem 0 1rem 0;
+}
+
+.publications {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.publicationCard {
+    padding: 2rem;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.05);
+    height: 32rem;
+    width: 25rem;
+}
+
+.publicationCard:hover {
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.pubcHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pubcTitle {
+    flex: 6;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.pubcDate {
+    flex: 2;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.pubcDescription {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.pubcImg {
+    height: 15rem;
+    object-fit: cover;
+    background-color: var(--primary-color);
+}
+
+.pubcName {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.5rem;
+    text-align:center;
+}

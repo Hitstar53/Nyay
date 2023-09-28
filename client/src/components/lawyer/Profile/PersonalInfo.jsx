@@ -1,293 +1,62 @@
-import React, { useState } from "react";
-import { Form, useActionData, json, redirect, useNavigation, useNavigate, useSubmit } from "react-router-dom";
-// import { FaEdit, FaSave } from "react-icons/fa";
-import EditIcon from '@mui/icons-material/Edit';
-import SaveIcon from '@mui/icons-material/Save';
-import TextField from "@mui/material/TextField";
-import Fab from "@mui/material/Fab";
-import MenuItem from "@mui/material/MenuItem";
-import Box from "@mui/material/Box";
-import dayjs from "dayjs";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DateField } from "@mui/x-date-pickers/DateField";
-import CustAlert from "../../UI/CustAlert";
-// import ServerUrl from "../../constants";
-import styles from "./PersonalInfo.module.css";
+import React from 'react'
+import styles from './PersonalInfo.module.css'
+import CallIcon from '@mui/icons-material/Call';
+import LanguageIcon from '@mui/icons-material/Language';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import MaleSharpIcon from '@mui/icons-material/MaleSharp';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import BusinessIcon from '@mui/icons-material/Business';
 
-const PersonalInfo = (props) => {
-    const [open, setOpen] = useState(false);
-    const [severity, setSeverity] = useState("");
-    const [message, setMessage] = useState("");
-    const navigate = useNavigate();
-
-    const handleClose = (event, reason) => {
-        if (reason === "clickaway") {
-            return;
-        }
-        setOpen(false);
-        navigate(0);
-    };
-
-    const [edit, setEdit] = useState(false);
-
-    const [personalInfo, setPersonalInfo] = useState(
-        props.info ? props.info : {}
-    );
-
-    const handleClickEdit = () => {
-        if (!edit) {
-            setEdit(true);
-        } else {
-            setEdit(false);
-        }
-    };
-
-    const handleDateChange = (event) => {
-        setPersonalInfo({
-            ...personalInfo,
-            dob: dayjs(event).format("YYYY/MM/DD"),
-        });
-    };
-
-    const handleChange = (e) => {
-        setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value });
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const updatePersonalInfo = async () => {
-            const response = await fetch(
-                `${ServerUrl}/api/student/personal`,
-                {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        email: JSON.parse(localStorage.getItem("userinfo")).email,
-                        phone: personalInfo.phone,
-                        address: personalInfo.address,
-                        dob: personalInfo.dob,
-                        gender: personalInfo.gender,
-                        blood: personalInfo.blood,
-                        religion: personalInfo.religion,
-                        linkedin: personalInfo.linkedin,
-                        github: personalInfo.github
-                    }),
-                }
-            );
-            if (!response.ok) {
-                setOpen(true);
-                setSeverity("error");
-                setMessage("Something went wrong, please try again later");
-            }
-            if (response.ok) {
-                const data = await response.json();
-                setOpen(true);
-                setSeverity("success");
-                setMessage("Personal Information Updated Successfully");
-            }
-        };
-        updatePersonalInfo();
-        setEdit(false);
-    };
-
+const PersonalInfo = () => {
     return (
-        <Box
-            className={styles.personalInfo}
-            component="form"
-            sx={{
-                "& .MuiTextField-root": { m: 1, width: "100%" },
-                "& .MuiOutlinedInput-input": {
-                    color: "var(--text-color) !important",
-                },
-                "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "var(--dark-override-color) !important",
-                },
-                "& .MuiInputLabel-root": { color: "var(--text-color) !important" },
-                "& .Mui-focused": { color: "var(--dark-override-color) !important" },
-            }}
-            noValidate
-            onSubmit={handleSubmit}
-            method="PUT"
-            autoComplete="on"
-        >
-            <h3 className={styles.header}>
-                Personal Information
-                {!edit ? (
-                    <EditIcon onClick={handleClickEdit} className={styles.titleIcon} />
-                ) : (
-                    <Fab
-                        type="submit"
-                        sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.5rem",
-                            fontWeight: "bold",
-                            borderRadius: "10px",
-                            backgroundColor: "var(--secondary-color)",
-                            color: "var(--text-color)",
-                            padding: "0.5rem 1rem",
-                            ":hover": {
-                                backgroundColor: "var(--secondary-color)",
-                            },
-                        }}
-                        variant="extended"
-                        size="small"
-                        aria-label="add"
-                    >
-                        <SaveIcon />
-                        Save
-                    </Fab>
-                )}
-            </h3>
-            <div className={styles.PersInfo}>
-                <div className={styles.twoCol}>
-                    <i className="fa-solid fa-phone"></i>
-                    {!edit && (
-                        <span className={styles.iconInfo}>+91 {personalInfo.phone}</span>
-                    )}
-                    {edit && (
-                        <TextField
-                            required
-                            name="phone"
-                            id="outlined-required"
-                            label="Mobile Number"
-                            type="text"
-                            onChange={handleChange}
-                            defaultValue={personalInfo.phone}
-                        />
-                    )}
-                </div>
-                <div className={styles.twoCol}>
-                    <i className="fa-solid fa-envelope"></i>
-                    {!edit && (
-                        <span className={styles.iconInfo}>{personalInfo.emailID}</span>
-                    )}
-                    {edit && (
-                        <TextField
-                            disabled
-                            name="emailID"
-                            id="outlined-required"
-                            label="Email"
-                            type="email"
-                            onChange={handleChange}
-                            defaultValue={personalInfo.emailID}
-                        />
-                    )}
+        <div>
+            <div className={styles.profileHeader}>
+                <span className={styles.profileImg}></span>
+                <div className={styles.profileInfo}>
+                    <h1 className={styles.profileName}>Sushant Sharma</h1>
+                    <h3 className={styles.licenseNo}>License Number: 3263BXBI2U3EY2</h3>
+                    <p className={styles.profileBio}>IIM Kozhikode (Bo'23) | Dean's Merit List (Top 5%ile) | Accenture
+                        Strategy Intern | Ex-ZS | Gold Medalist B.Tech CSE |Sr. Member -
+                        IIMK PR Cell, Abakus, Women in Mgmt | ShARE</p>
                 </div>
             </div>
-            <div className={styles.twoColAddress}>
-                <i className="fa-solid fa-location-dot"></i>
-                {!edit && (
-                    <span className={styles.iconInfo}>{personalInfo.address}</span>
-                )}
-                {edit && (
-                    <TextField
-                        required
-                        name="address"
-                        id="outlined-required"
-                        label="Address"
-                        type="text"
-                        onChange={handleChange}
-                        defaultValue={personalInfo.address}
-                    />
-                )}
+            <div className={styles.contact}>
+                <span className={styles.pills}> <CallIcon /> 98677 43780</span>
+                <span className={styles.pills}> <AlternateEmailIcon /> sushantk7@gmail.com</span>
+                <span className={styles.pills}> <LinkedInIcon /> sushantk7.linkedin.com</span>
+                <span className={styles.pills}> <LanguageIcon /> advsushant.com</span>
             </div>
-            <div className={styles.PersInfo}>
-                <div className={styles.twoCol}>
-                    <i className="fa-solid fa-calendar-days"></i>
-                    {!edit && (
-                        <span className={styles.iconInfo}>
-                            {dayjs(personalInfo.dob).format("DD/MM/YYYY")}
-                        </span>
-                    )}
-                    {edit && (
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DateField
-                                required
-                                name="dob"
-                                label="Date of Birth"
-                                onChange={handleDateChange}
-                                value={dayjs(personalInfo.dob)}
-                                format="DD/MM/YYYY"
-                            />
-                        </LocalizationProvider>
-                    )}
+            <h2 className={styles.heading}>Personal Information</h2>
+            <div className={styles.infoContainer}>
+                <div>
+                    <span className={styles.label}><MaleSharpIcon/>  Gender</span>
+                    <div>Male</div>
                 </div>
-                <div className={styles.twoCol}>
-                    <i className="fa-solid fa-venus-mars"></i>
-                    {!edit && (
-                        <span className={styles.iconInfo}>{personalInfo.gender}</span>
-                    )}
-                    {edit && (
-                        <TextField
-                            required
-                            name="gender"
-                            id="outlined-required"
-                            select
-                            label="Gender"
-                            onChange={handleChange}
-                            defaultValue={personalInfo.gender}
-                        >
-                            <MenuItem key="Male" value="Male">
-                                Male
-                            </MenuItem>
-                            <MenuItem key="Female" value="Female">
-                                Female
-                            </MenuItem>
-                            <MenuItem key="Other" value="Other">
-                                Other
-                            </MenuItem>
-                        </TextField>
-                    )}
+                <div>
+                    <span className={styles.label}><CalendarMonthIcon/>  Date of Birth</span>
+                    <div>05/05/1973</div>
+                </div>
+                <div>
+                    <span className={styles.label}><LocationOnIcon/> Location</span>
+                    <div>Mumbai, Maharashtra</div>
+                </div>
+                <div>
+                    <span className={styles.label}><AlternateEmailIcon/> Office Mail</span>
+                    <div>sushant99@lawyer.com</div>
+                </div>
+                <div> 
+                    <span className={styles.label}><CallIcon/>   Office Number</span>
+                    <div>+022 6788 4350</div>
+                </div>
+                <div>
+                    <span className={styles.label}><BusinessIcon/>   Office Address</span>
+                    <div>111/Bhoomi Heights, Near Zoom Plaza, Andheri(W)</div>
                 </div>
             </div>
-            <div className={styles.PersInfo}>
-                <div className={styles.twoCol}>
-                    <i className="fa-brands fa-linkedin"></i>
-                    {!edit && (
-                        <span className={styles.iconInfo}>{personalInfo.linkedin}</span>
-                    )}
-                    {edit && (
-                        <TextField
-                            required
-                            name="linkedin"
-                            id="outlined-required"
-                            label="LinkedIn"
-                            type="text"
-                            onChange={handleChange}
-                            defaultValue={personalInfo.linkedin}
-                        />
-                    )}
-                </div>
-                <div className={styles.twoCol}>
-                    <i class="fas fa-globe"></i>
-                    {!edit && (
-                        <span className={styles.iconInfo}>{personalInfo.github}</span>
-                    )}
-                    {edit && (
-                        <TextField
-                            required
-                            name="website"
-                            id="outlined-required"
-                            label="Website"
-                            type="text"
-                            onChange={handleChange}
-                            defaultValue={personalInfo.website}
-                        />
-                    )}
-                </div>
-            </div>
-            <CustAlert
-                open={open}
-                onClose={handleClose}
-                severity={severity}
-                message={message}
-            />
-        </Box>
-    );
-};
+        </div>
+    )
+}
 
-export default PersonalInfo;
+export default PersonalInfo
