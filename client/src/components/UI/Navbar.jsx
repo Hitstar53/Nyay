@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useNavigate, Link, useLocation, NavLink } from "react-router-dom";
+import { useNavigate, useLocation, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import AppBar from "@mui/material/AppBar";
@@ -16,6 +16,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import Link from "@mui/material/Link";
 import Divider from "@mui/material/Divider";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -230,7 +231,11 @@ export default function NavBar(props) {
             }}
         >
         <List>
-          <NavLink to="/lawyer/dashboard" style={{ textDecoration: "none", color: "inherit" }}>
+          <NavLink 
+            to="/lawyer/dashboard" 
+            style={{ textDecoration: "none", color: "inherit" }}
+            onClick={toggleDrawer(anchor, false)}
+          >
             <ListItem key="Dashboard" disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -243,6 +248,7 @@ export default function NavBar(props) {
           <NavLink
             to="/lawyer/profile"
             style={{ textDecoration: "none", color: "inherit" }}
+            onClick={toggleDrawer(anchor, false)}
           >
             <ListItem key="Edit Profile" disablePadding>
               <ListItemButton>
@@ -375,21 +381,22 @@ export default function NavBar(props) {
                     to={`/user/${item.toLowerCase()}`}
                     style={{ textDecoration: "none", color: "inherit" }}
                   >
-                    <Button
+                    <Link
                       key={item}
+                      underline="none"
                       sx={{
                         color: "#000",
                         fontWeight: 700,
-                        fontSize: "1rem",
-                        textTransform: "none",
-                        mr: 2,
+                        mr: 4,
+                        padding: "0.3rem 0",
+                        transition: "all 0.2s ease",
                         "&:hover": {
-                          borderBottom: "2px solid #000",
+                          borderBottom: "3px solid #000",
                         },
                       }}
                     >
                       {item}
-                    </Button>
+                    </Link>
                   </NavLink>
                 ))}
               </Box>

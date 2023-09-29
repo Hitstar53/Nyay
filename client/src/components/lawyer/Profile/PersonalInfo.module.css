@@ -1,32 +1,14 @@
 .profileHeader {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 1rem;
-}
-
-.profileImg {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: var(--primary-color);
 }
 
 .profileInfo {
     display: flex;
     flex-direction: column;
-    width: 50rem;
-}
-
-.profileName {
-    padding: 0rem;
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.licenseNo {
-    font-size: 1rem;
-    font-weight: 600;
+    width: 50%;
 }
 
 .contact {
