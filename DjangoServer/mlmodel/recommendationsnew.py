@@ -36,7 +36,7 @@ def suggest_lawyers(user_legal_problem, num_lawyers=5):
     tfidf_vectorizer = TfidfVectorizer(stop_words='english')
 
     # Fit and transform the text data
-    tfidf_matrix = tfidf_vectorizer.fit_transform(df_legal_problems['Legal Problem Text'])
+    tfidf_matrix = tfidf_vectorizer.fit_transform(df_legal_problems['Legal Issue'])
 
     # Transform user's legal problem into a TF-IDF vector
     user_legal_problem_tfidf = tfidf_vectorizer.transform([user_legal_problem])

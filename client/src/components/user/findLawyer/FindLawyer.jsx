@@ -104,7 +104,7 @@ const FindLawyer = () => {
         e.preventDefault()
         console.log(search)
         const recommended = async () => {
-            const res = await fetch(`http://localhost:8000/recommend/`,{
+            const res = await fetch(`http://127.0.0.1:8000/recommend/`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -124,7 +124,7 @@ const FindLawyer = () => {
         <Hero/>
         <Container>
             <SearchContainer>
-                <h1 >Type in your Case details</h1>
+                <h1 >Type in your case details</h1>
                     <Search>
                     <TextField
                         placeholder='Type in your case details'
@@ -151,8 +151,23 @@ const FindLawyer = () => {
             </Filter>
             <Lawyers>
                 <LawyerList>
-                <LawyerListCard/>
+                    {lawyer && lawyer.data.lawyers.Lawyer ? (
+                        lawyer.data.lawyers.Lawyer.map((vakil, index) => (
+                        <LawyerListCard
+                            key={index}
+                            name={vakil}
+                            category={lawyer.data.lawyers.Category[index]}
+                            description={lawyer.data.lawyers.Description[index]}
+                            experience={lawyer.data.lawyers.Experience[index]}
+                            userRating={lawyer.data.lawyers["User Rating"][index]}
+                        />
+                        ))
+                    ) : (
+                        <div>No lawyer data available.</div>
+                    )}
                 </LawyerList>
+
+
                 <LawyerProfileContainer>
                     <LawyerProfile>
                     </LawyerProfile>

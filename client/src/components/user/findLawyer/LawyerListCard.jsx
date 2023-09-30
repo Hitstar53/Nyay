@@ -72,20 +72,20 @@ const LawyerCategories = styled.div`
     border-radius: 20px;
   }
 `
-const LawyerListCard = () => {
+const LawyerListCard = ({ name, category, description, experience, userRating }) => {
   return (
     <div>
       <Card>
         <LawyerInfo>
           <LawyerImg />
           <LawyerDesc>
-            <div className='name'>Yash Sonawane</div>
-            <div className='shortDesc'>ISB | Hyderabad | Counsel high-court </div>
+            <div className='name'>{name}</div>
+            <div className='shortDesc'>{experience} years | Delhi | {category} </div>
           </LawyerDesc>
 
           <LaywerStars>
             <StarIcon sx={{ color: '#fcb903ff' }} />
-            <div className='rating'>5.0</div>
+            <div className='rating'>{userRating}</div>
           </LaywerStars>
         </LawyerInfo>
 
