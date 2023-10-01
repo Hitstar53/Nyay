@@ -28,7 +28,7 @@ row-gap:7%;
 const CategoryCard = styled.div`
 width:10%;
 height:40%;
-background-color:#E3F1F8;
+${'' /* background-color:#E3F1F8; */}
 border-radius:10px;
 border:1px solid #A5DBF4;
 display:flex;

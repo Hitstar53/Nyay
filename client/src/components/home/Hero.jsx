@@ -13,6 +13,7 @@ height:70vh;
 display:flex;
 justify-content:center;
 align-items:center;
+background-color:#e9f1f5;
 
 `
 const HeroContent=styled.div`
@@ -26,16 +27,59 @@ span{
   width:60%;
   margin-left:20%;
 }
-.title{
+.herotitle{
   font-weight:900;
   font-size:5rem;
+  background: linear-gradient(
+        to right,
+        #0D265C 10%,
+        #0B98DA 30%,
+        #0B98DA 70%,
+        #0D265C 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 300% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+    @keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
 }
 .tagline{
   font-weight:700;
   font-size:2.3rem;
+  
+  background: linear-gradient(
+        to right,
+        #0D265C 10%,
+        #0B98DA 30%,
+        #0B98DA 70%,
+        #0D265C 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 300% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+    @keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
 }
 .description{
-  font-weight:500;
+  font-weight:600;
   font-size:1rem;
   margin-top:1%;
   color:grey;
@@ -126,7 +170,7 @@ const Hero = () => {
   return (
     <Wrapper>
     <HeroContent>
-      <span className="title">JUSTICE</span>
+      <span className="herotitle">JUSTICE</span>
       <span className="tagline">Now served at Home !</span>
       <span className="description">" Find your Legal Practitioners from the comfort of your Home " </span>
       <Tab>

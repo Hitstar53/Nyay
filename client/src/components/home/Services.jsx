@@ -56,7 +56,7 @@ height:15.5rem;
 display:flex;
 flex-direction:column;
 border-radius:0 20px 20px;
-border:2px solid var(--secondary-color);
+border:1px solid var(--secondary-color);
 background-color:white;
 padding:30px;
 box-shadow: 0 0 10px  hsl(0, 0%, 81%);
