@@ -8,7 +8,8 @@
     "server": "nodemon server/index.js",
     "client": "npm run dev --prefix client",
     "django": "python DjangoServer/manage.py runserver",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run django\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "all": "concurrently \"npm run server\" \"npm run client\" \"npm run django\""
   },
   "keywords": [],
   "author": "",

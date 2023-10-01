@@ -5,7 +5,7 @@ import {createLawyer, getLawyer, updateLawyer, deleteLawyer, deleteApt} from '..
 
 const router = express.Router();
 router.route('/register').post(createLawyer);
-router.route('/').get(getLawyer);
+router.route('/:id').get(getLawyer);
 router.route('/:id').put(updateLawyer).delete(deleteLawyer);
 router.route('/tracker/:id').post(postUpdate);
 router.route('/tracker/:id').get(getUpdate);

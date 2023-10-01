@@ -165,121 +165,134 @@ export default function NavBar(props) {
               }}
             />
           </IconButton>
-            <Typography variant="h6" component="div"
-                sx={{
-                    fontWeight: 700,
-                }}
-            >
-                Hatim Sawai
-            </Typography>
-            <Typography variant="body2" component="div"
-                sx={{
-                    opacity: 0.6,
-                    fontSize: "0.8rem",
-                    textAlign: "center",
-                    mb: 3,
-                }}
-            >
-                <span style={{ color: "var(--primary-color)" }}>Lawyer</span>
-            </Typography>
-            <Box
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontWeight: 700,
+            }}
+          >
+            Hatim Sawai
+          </Typography>
+          <Typography
+            variant="body2"
+            component="div"
+            sx={{
+              opacity: 0.6,
+              fontSize: "0.8rem",
+              textAlign: "center",
+              mb: 3,
+            }}
+          >
+            <span style={{ color: "var(--primary-color)" }}>Lawyer</span>
+          </Typography>
+          <Box
+            sx={{
+              mb: 2,
+              width: "87%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography
+              variant="body2"
+              component="div"
               sx={{
-                mb: 2,
-                width: "87%",
                 display: "flex",
-                justifyContent: "space-between",
+                alignItems: "center",
+                fontWeight: 700,
+                fontSize: "1rem",
               }}
-              >
-              <Typography variant="body2" component="div"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    fontWeight: 700,
-                    fontSize: "1rem",
-                  }}
-                  >
-                <TrackChangesIcon sx={{ fontSize: "1.5rem", mr: 0.5 }} />
-                94.4%
-              </Typography>
-              <Divider orientation="vertical" flexItem
-                  sx={{
-                    width: "0.125rem",
-                    height: "1.5rem",
-                    backgroundColor: "var(--text-color)",
-                  }}
-                  />
-              <Typography variant="body2" component="div"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    fontWeight: 700,
-                    fontSize: "1rem",
-                  }}
-              >
-                <GradeRoundedIcon sx={{ fontSize: "1.5rem", mr: 0.5 }} />
-                8.7/10
-              </Typography>
-            </Box>
+            >
+              <TrackChangesIcon sx={{ fontSize: "1.5rem", mr: 0.5 }} />
+              94.4%
+            </Typography>
+            <Divider
+              orientation="vertical"
+              flexItem
+              sx={{
+                width: "0.125rem",
+                height: "1.5rem",
+                backgroundColor: "var(--text-color)",
+              }}
+            />
+            <Typography
+              variant="body2"
+              component="div"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                fontWeight: 700,
+                fontSize: "1rem",
+              }}
+            >
+              <GradeRoundedIcon sx={{ fontSize: "1.5rem", mr: 0.5 }} />
+              8.7/10
+            </Typography>
+          </Box>
         </Box>
         <Divider />
         <Box
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "100%",
-            }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "100%",
+          }}
         >
-        <List>
-          <NavLink 
-            to="/lawyer/dashboard" 
-            style={{ textDecoration: "none", color: "inherit" }}
-            onClick={toggleDrawer(anchor, false)}
-          >
-            <ListItem key="Dashboard" disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <SpaceDashboardIcon />
-                </ListItemIcon>
-                <ListItemText primary="Dashboard" />
-              </ListItemButton>
-            </ListItem>
-          </NavLink>
-          <NavLink
-            to="/lawyer/profile"
-            style={{ textDecoration: "none", color: "inherit" }}
-            onClick={toggleDrawer(anchor, false)}
-          >
-            <ListItem key="Edit Profile" disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <EditNoteRoundedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Edit Profile" />
-              </ListItemButton>
-            </ListItem>
-          </NavLink>
-          <NavLink to="/lawyer/messages" style={{ textDecoration: "none", color: "inherit" }}>
-            <ListItem key="Chat" disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <ChatRoundedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Chat" />
-              </ListItemButton>
-            </ListItem>
-          </NavLink>
-        </List>
-        <List>
-            <ListItem key="Logout" disablePadding>
+          <List>
+            <NavLink
+              to="/lawyer/dashboard"
+              style={{ textDecoration: "none", color: "inherit" }}
+              onClick={toggleDrawer(anchor, false)}
+            >
+              <ListItem key="Dashboard" disablePadding>
                 <ListItemButton>
-                    <ListItemIcon>
-                        <LogoutOutlinedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Logout" />
+                  <ListItemIcon>
+                    <SpaceDashboardIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Dashboard" />
                 </ListItemButton>
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/lawyer/profile/65032cce40f29ac289ae4acc"
+              style={{ textDecoration: "none", color: "inherit" }}
+              onClick={toggleDrawer(anchor, false)}
+            >
+              <ListItem key="Edit Profile" disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <EditNoteRoundedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Edit Profile" />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/lawyer/messages"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItem key="Chat" disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <ChatRoundedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Chat" />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+          </List>
+          <List>
+            <ListItem key="Logout" disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <LogoutOutlinedIcon />
+                </ListItemIcon>
+                <ListItemText primary="Logout" />
+              </ListItemButton>
             </ListItem>
-        </List>
+          </List>
         </Box>
       </Box>
     );

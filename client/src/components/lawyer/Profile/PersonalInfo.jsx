@@ -1,5 +1,4 @@
 import React from 'react'
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import CallIcon from '@mui/icons-material/Call';
 import LanguageIcon from '@mui/icons-material/Language';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
@@ -11,12 +10,12 @@ import BusinessIcon from '@mui/icons-material/Business';
 import styles from './PersonalInfo.module.css'
 import { Avatar } from '@mui/material';
 
-const PersonalInfo = () => {
+const PersonalInfo = (props) => {
     return (
       <div>
         <div className={styles.profileHeader}>
           <Avatar
-            alt="Sushant Sharma"
+            alt={props.info.fullName}
             sx={{
               height: "8.5rem",
               width: "8.5rem",
@@ -24,7 +23,9 @@ const PersonalInfo = () => {
             }}
           />
           <div className={styles.profileInfo}>
-            <h1 className="text-5xl font-bold">Sushant Sharma</h1>
+            <h1 className="text-5xl font-bold">
+              {props.info.fullName}
+            </h1>
             <h3 className="text-lg flex items-center gap-2 font-semibold">
               <i class="fa-solid fa-id-card"></i>
               License: 3263BXBI2U3EY2
@@ -38,10 +39,10 @@ const PersonalInfo = () => {
         </div>
         <div className={styles.contact}>
           <span className={styles.pills}>
-            <CallIcon /> 98677 43780
+            <CallIcon /> {props.info.phone}
           </span>
           <span className={styles.pills}>
-            <AlternateEmailIcon /> sushantk7@gmail.com
+            <AlternateEmailIcon /> {props.info.email}
           </span>
           <span className={styles.pills}>
             <LinkedInIcon /> sushantk7.linkedin.com
