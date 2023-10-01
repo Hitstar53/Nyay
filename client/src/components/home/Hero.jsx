@@ -101,7 +101,7 @@ box-shadow: 0 0 10px  hsl(0, 0%, 81%);
 const TopContainer=styled.div`
 width:95%;
 height:25%;
-margin-top:2%;
+margin-top:1.5%;
 display:flex;
 align-items:center;
 .title{
@@ -129,7 +129,7 @@ button{
 const BottomContainer=styled.div`
 width:95%;
 height:40%;
-margin-top:1.5%;
+margin-top:2%;
 display:flex;
 justify-content:space-between;
 `
@@ -137,7 +137,7 @@ const BottomElement=styled.div`
 height:100%;
 width:30%;
 border-radius:10px;
-border:3px solid  #d6eef9;
+border:2px solid  var(--secondary-color);
 display:flex;
 align-items:center;
 `
@@ -189,7 +189,7 @@ const Hero = () => {
 
       <BottomContainer>
         <BottomElement> 
-           <GavelIcon sx={{fontSize:'2rem',margin:'8%'}}></GavelIcon>
+           <GavelIcon sx={{fontSize:'2rem',margin:'8%',color:'var(--primary-color)'}}></GavelIcon>
             <BottomeElementContent>
               <div className="title">Category</div>
               <div className="info">Civil Litigation</div>
@@ -197,14 +197,14 @@ const Hero = () => {
         </BottomElement>
 
         <BottomElement> 
-           <PlaceIcon sx={{fontSize:'2rem',margin:'8%'}}></PlaceIcon>
+           <PlaceIcon sx={{fontSize:'2rem',margin:'8%',color:'var(--primary-color)'}}></PlaceIcon>
             <BottomeElementContent>
               <div className="title">Location</div>
               <div className="info">Mumbai , MH</div>
             </BottomeElementContent>
         </BottomElement>
         <BottomElement> 
-           <GavelIcon sx={{fontSize:'2rem',margin:'8%'}}></GavelIcon>
+           <GavelIcon sx={{fontSize:'2rem',margin:'8%',color:'var(--primary-color)'}}></GavelIcon>
             <BottomeElementContent>
               <div className="title">Category</div>
               <div className="info">Civil Litigation</div>

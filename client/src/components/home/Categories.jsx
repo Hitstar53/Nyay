@@ -30,7 +30,7 @@ width:10%;
 height:40%;
 ${'' /* background-color:#E3F1F8; */}
 border-radius:10px;
-border:1px solid #A5DBF4;
+border:1px solid var(--secondary-color);
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -41,20 +41,20 @@ transition: all 0.4s ease;
   transform:scale(1.1);
 }
  `
-// const CategoryCardImg=styled.img`
-// height:55%;
-// width:60%;
-// `
-// const CategoryCardTitle=styled.div`
-// display:flex;
-// flex-directon:column;
-// justify-content:center;
-// margin-top:6%;
-// font-weight:600;
-// font-size:13px;
-// color:#0d265c;
+const CategoryCardImg=styled.img`
+height:55%;
+width:60%;
+`
+const CategoryCardTitle=styled.div`
+display:flex;
+flex-directon:column;
+justify-content:center;
+margin-top:6%;
+font-weight:600;
+font-size:13px;
+color:#0d265c;
 
-// `
+`
  
 
 const Categories = () => {
@@ -63,52 +63,66 @@ const Categories = () => {
     <Title>Legal Categories</Title>
       <CategoryContainer>
            <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
 
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+           
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           </CategoryCard>
+
+           <CategoryCard>
+           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
            </CategoryCard>
             
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
-            
-           <CategoryCard>
-
-           </CategoryCard>
+        
             
         </CategoryContainer>
         </Wrapper>
