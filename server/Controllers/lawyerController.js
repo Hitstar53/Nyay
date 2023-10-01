@@ -22,9 +22,8 @@ const createLawyer = asyncHandler ( async (req, res) => {
 });
 
 const getLawyer = asyncHandler (async (req, res) => {
-    const fullName = req.query.fullName;
     try {
-        const lawyer = await Lawyer.findOne({fullName: fullName});
+        const lawyer = await Lawyer.findOne({_id: req.params.id});
         const {password, updatedAt, ...other} = lawyer._doc;
         res.status(200).json(other);
     } catch(err) {
