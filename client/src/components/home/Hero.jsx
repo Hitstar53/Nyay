@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Hero.module.css";
+
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import PaidIcon from '@mui/icons-material/Paid';

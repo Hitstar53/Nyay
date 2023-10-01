@@ -1,4 +1,9 @@
 import React from 'react'
+import search from '../../assets/imgs/searching.gif'
+import translate from '../../assets/imgs/translate.gif'
+import care from '../../assets/imgs/care.gif'
+import walking from '../../assets/imgs/walking.gif'
+
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -91,25 +96,25 @@ const Services = () => {
     </LableHolder>
     <ServicesCardHolder>
     <ServicesCard>
-      <ServiceIcon/>
+      <ServiceIcon src={search}/>
       <ServiceTitle>Find Practitioners</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
 
     <ServicesCard>
-      <ServiceIcon/>
+      <ServiceIcon src={translate}/>
       <ServiceTitle>Find Practitioners</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
     <ServicesCard>
 
-      <ServiceIcon/>
+      <ServiceIcon src={care}/>
       <ServiceTitle>Find Practitioners</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
     <ServicesCard>
     
-      <ServiceIcon/>
+      <ServiceIcon src={walking}/>
       <ServiceTitle>Find Practitioners</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
