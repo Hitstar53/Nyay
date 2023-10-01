@@ -82,7 +82,7 @@ const TestimonialColumn = styled.div`
   }
 `
 const TestimonialCard = styled.div`
-  width: 90%;
+  width: 93%;
   height: 70%;
   display: flex;
   flex-direction: column;
