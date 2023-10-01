@@ -4,7 +4,7 @@ import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp';
 
 
 const Wrapper= styled.div`
-width:85%;
+width:80%;
 height:auto;
 margin-top:6%;
 display:flex;
@@ -24,7 +24,7 @@ position:relative;
 const ServiceImg = styled.img`
 flex:2;
 height:100%;
-background-color:red;
+background-color:yellow;
 `
 const ServiceDesc = styled.div`
 flex:4;
@@ -64,7 +64,8 @@ width:7rem;
 height:13%;
 margin:3% 5% 0;
 border:2px solid var(--primary-color);
-color:var(--primary-color);
+background-color:var(--primary-color);
+color:white;
 border-radius:0 20px 20px;
 font-weight:700;
 font-size:1.1rem;

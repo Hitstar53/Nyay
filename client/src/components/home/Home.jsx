@@ -3,10 +3,11 @@ import Hero from './Hero'
 import Services from './Services'
 import Categories from './Categories'
 import ServiceDescription from './ServiceDescription'
-// import Probono from './Probono'
+import Probono from './Probono'
 // import Reviews from './Reviews'
 
 import styled from 'styled-components'
+
 
 const HomeContent = styled.div`
 width:100%;
@@ -25,6 +26,7 @@ const Home = () => {
        <Categories/>
         <Services/>
         <ServiceDescription/>
+        <Probono/>
      </HomeContent>
     
      

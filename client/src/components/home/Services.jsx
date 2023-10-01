@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-width:85%;
+width:80%;
 margin-top:4%;
 height:24rem;
 display:flex;
@@ -26,7 +26,7 @@ align-items:center;
 margin-top:3%;
 
 .title{
-  font-weight:600;
+  font-weight:700;
   font-size:2.3rem;
   margin-left:4%;
   color:white;
@@ -36,7 +36,7 @@ button{
   width:13%;
   background-color:white;
   margin-right:5%;
-  border-radius:25px;
+  border-radius:0 20px 20px;
   font-weight:600;
   font-size:1.1rem;
   color:
@@ -55,10 +55,12 @@ width:23%;
 height:15.5rem;
 display:flex;
 flex-direction:column;
-border-radius:10px;
+border-radius:0 20px 20px;
+border:2px solid var(--secondary-color);
 background-color:white;
-box-shadow: 0 5px 20px  hsl(0, 0%, 81%);
 padding:30px;
+box-shadow: 0 0 10px  hsl(0, 0%, 81%);
+
 `
 const ServiceIcon=styled.img`
 width:30%;
