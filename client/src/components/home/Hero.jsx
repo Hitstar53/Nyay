@@ -5,6 +5,9 @@ import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import PaidIcon from '@mui/icons-material/Paid';
 import GavelIcon from '@mui/icons-material/Gavel';
 import PlaceIcon from '@mui/icons-material/Place';
+import lawfirm from '../../assets/imgs/law-firm.png'
+import item from '../../assets/imgs/item.jpg'
+import heroimg from '../../assets/imgs/heroimg.svg'
 import styled from "styled-components";
 
 const Wrapper=styled.div`
@@ -13,11 +16,11 @@ height:70vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background-color:#e9f1f5;
+background-color:;
 
 `
 const HeroContent=styled.div`
-flex:3;
+flex:4;
 height:80%;
 z-index:2;
 display:flex;
@@ -82,20 +85,20 @@ span{
   font-weight:600;
   font-size:1rem;
   margin-top:1%;
-  color:grey;
+  
 }
 `
 const Tab = styled.div`
 width:100%;
-height:40%;
+height:35%;
 background-color:white;
-margin:6% 20% 0 ;
+margin:4% 20% 0 ;
 z-index:3;
 border-radius:0 20px 20px;
 display:flex;
 flex-direction:column;
 align-items:center;
-box-shadow: 0 0 10px  hsl(0, 0%, 81%);
+box-shadow: 0 0 20px hsl(0, 0%, 81%);
 
 `
 const TopContainer=styled.div`
@@ -122,7 +125,7 @@ button{
   color:white;
   border-radius:0 15px 15px;
   height:100%;
-  width:10%;
+  width:15%;
   font-weight:600;
 }
 `
@@ -160,11 +163,30 @@ margin-left:3%;
   font-size:0.9rem;
 }
 `
-const HeroImg=styled.div`
-flex:2 ;
+const HeroImgContainer=styled.div`
+flex:3 ;
 height:100%;
-background-color:yellow;
 z-index:1;
+position:relative;
+display:flex;
+justify-content:center;
+overflow:hidden;
+border-radius:0 0 0 50px;
+
+`
+const HeroImg = styled.div`
+width:100%;
+height:100%;
+position:absolute;
+z-index:4;
+
+display:flex;
+img{
+margin-top:10%;
+  width:110%;
+  height:100%;
+  object-fit:cover;
+}
 `
 const Hero = () => {
   return (
@@ -176,13 +198,13 @@ const Hero = () => {
       <Tab>
       <TopContainer>
         <div className="title">Book Appointment</div>
-        <PersonSearchIcon className="icon" sx={{marginLeft:'10%',color:'grey'}}></PersonSearchIcon>
+        <PersonSearchIcon className="icon" sx={{marginLeft:'5%',color:'grey'}}></PersonSearchIcon>
         <div className="process">Find Lawyers</div>
 
-        <WatchLaterIcon sx={{marginLeft:'4%',color:'grey'}}></WatchLaterIcon>
+        <WatchLaterIcon sx={{marginLeft:'3%',color:'grey'}}></WatchLaterIcon>
         <div className="process">Choose Date & Time</div>
 
-        <PaidIcon sx={{marginLeft:'4%',color:'grey'}}></PaidIcon>
+        <PaidIcon sx={{marginLeft:'3%',color:'grey'}}></PaidIcon>
         <div className="process">Pay</div>
         <button>Explore</button>
       </TopContainer>
@@ -214,7 +236,20 @@ const Hero = () => {
       </BottomContainer>
       </Tab>
     </HeroContent>
-    <HeroImg></HeroImg>
+
+    <HeroImgContainer >
+    <div class="relative w-full max-w-lg">
+      <div class="absolute top-5 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute top-4 right-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute top-60 left-0 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div class="absolute top-60 left-60 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      </div>
+
+    <HeroImg >
+      <img src={heroimg}></img>
+    </HeroImg>
+     
+   </HeroImgContainer>
     </Wrapper>
  
   );
