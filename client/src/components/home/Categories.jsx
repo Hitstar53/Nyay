@@ -88,7 +88,7 @@ const Categories = () => {
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg ></CategoryCardImg>
            <CategoryCardTitle>Immigration</CategoryCardTitle>
            </CategoryCard>
 

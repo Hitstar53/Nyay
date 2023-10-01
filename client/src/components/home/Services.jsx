@@ -63,14 +63,13 @@ flex-direction:column;
 border-radius:0 20px 20px;
 border:1px solid var(--secondary-color);
 background-color:white;
-padding:30px;
+padding:2%;
 box-shadow: 0 0 10px  hsl(0, 0%, 81%);
 
 `
 const ServiceIcon=styled.img`
 width:40%;
 height:40%;
-background-color:yellow;
 `
 const ServiceTitle=styled.div`
 margin:6% 0 ;
@@ -104,13 +103,13 @@ const Services = () => {
 
     <ServicesCard>
       <ServiceIcon src={translate}/>
-      <ServiceTitle>Translate</ServiceTitle>
+      <ServiceTitle>Translate Docs</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
     <ServicesCard>
 
       <ServiceIcon src={care}/>
-      <ServiceTitle>Legal Aid</ServiceTitle>
+      <ServiceTitle>Apply for Legal Aid</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
     <ServicesCard>
