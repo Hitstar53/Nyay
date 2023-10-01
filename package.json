@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/index.js",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "django": "python DjangoServer/manage.py runserver",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run django\""
   },
   "keywords": [],
   "author": "",

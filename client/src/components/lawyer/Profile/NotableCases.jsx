@@ -7,7 +7,7 @@ const NotableCases = () => {
             <h2 className={styles.heading}>Notable Case</h2>
             <div className={styles.caseContainer}>
                 <div className={styles.caseHeading}>
-                    <h4>Children forced to carry garbage and work in dumping grounds.</h4>
+                    <h4>Children forced to carry garbage and work in dumping grounds</h4>
                     <h5>10 Januray, 2007</h5>
                 </div>
                 <div className={styles.caseTags}>

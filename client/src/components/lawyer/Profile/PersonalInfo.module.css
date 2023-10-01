@@ -8,6 +8,7 @@
 .profileInfo {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
     width: 50%;
 }
 
@@ -19,17 +20,30 @@
 }
 
 .pills {
-    border: solid 0.05rem var(--primary-color);
-    border-radius: 4rem;
+    border: 0.1rem solid var(--primary-color);
+    border-radius: 100vw;
     padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pills:hover {
+    color: var(--text-color);
+    background-color: var(--primary-color-light);
 }
 
 .heading {
     font-size: 1.5rem;
     font-weight: 600;
-    margin: 1rem 0;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .infoContainer {
@@ -39,8 +53,13 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    background-color: var(--bg-light);
 }
 
 .label {
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 }

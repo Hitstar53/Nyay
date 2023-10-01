@@ -4,6 +4,7 @@ import LawyerListCard from './LawyerListCard'
 import LawyerProfile from './LawyerProfile'
 import { TextField } from '@mui/material'
 import Button from '@mui/material/Button';
+import ServerUrl from '../../../constants.js'
 
 const Hero = styled.div`
 width:100%;
@@ -104,7 +105,7 @@ const FindLawyer = () => {
         e.preventDefault()
         console.log(search)
         const recommended = async () => {
-            const res = await fetch(`http://127.0.0.1:8000/recommend/`,{
+            const res = await fetch(`${ServerUrl}/recommend/`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -139,13 +140,11 @@ const FindLawyer = () => {
                         onClick={handleSubmit}
                     />
                 </Search>
-               
             </SearchContainer>
-
             <Filter>
                 <div className='sort'>SortBy</div>
-                <div >Category</div>
-                <div >Location</div>
+                <div>Category</div>
+                <div>Location</div>
                 <div>Price</div>
                 <div>Experience</div>
             </Filter>
@@ -166,8 +165,6 @@ const FindLawyer = () => {
                         <div>No lawyer data available.</div>
                     )}
                 </LawyerList>
-
-
                 <LawyerProfileContainer>
                     <LawyerProfile>
                     </LawyerProfile>

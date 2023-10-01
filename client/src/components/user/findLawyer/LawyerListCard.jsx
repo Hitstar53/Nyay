@@ -72,20 +72,20 @@ const LawyerCategories = styled.div`
     border-radius: 20px;
   }
 `
-const LawyerListCard = ({ name, category, description, experience, userRating }) => {
+const LawyerListCard = (props) => {
   return (
     <div>
       <Card>
         <LawyerInfo>
           <LawyerImg />
           <LawyerDesc>
-            <div className='name'>{name}</div>
-            <div className='shortDesc'>{experience} years | Delhi | {category} </div>
+            <div className='name'>{props.name}</div>
+            <div className='shortDesc'>{props.experience} years | Delhi | {props.category} </div>
           </LawyerDesc>
 
           <LaywerStars>
             <StarIcon sx={{ color: '#fcb903ff' }} />
-            <div className='rating'>{userRating}</div>
+            <div className='rating'>{props.userRating}</div>
           </LaywerStars>
         </LawyerInfo>
 
