@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   height: 35rem;
   display: flex;
   flex-direction: column;
+  margin-top:4%;
 `
 
 const Container = styled.div`
