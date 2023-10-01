@@ -15,10 +15,9 @@ const Hero = () => {
         <span>Not Just A Booking Website</span>
         <button className={styles.butt}>Sign Up {'->'}</button>
       </div>
-      <div className={styles.main}>
-        <div className={styles.gradient}></div>{" "}
+      
       </div>
-    </div>
+ 
   );
 };
 

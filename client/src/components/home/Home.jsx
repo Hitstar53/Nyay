@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from './Hero'
 import Services from './Services'
 import Categories from './Categories'
-// import Recommendation from './Recommendation'
+import ServiceDescription from './ServiceDescription'
 // import Probono from './Probono'
 // import Reviews from './Reviews'
 
@@ -22,8 +22,9 @@ const Home = () => {
     <div>
       <Hero />
      <HomeContent>
-    <Categories/>
-    <Services/>
+       <Categories/>
+        <Services/>
+        <ServiceDescription/>
      </HomeContent>
     
      
