@@ -91,7 +91,7 @@ height:40%;
 background-color:white;
 margin:6% 20% 0 ;
 z-index:3;
-border-radius:20px;
+border-radius:0 20px 20px;
 display:flex;
 flex-direction:column;
 align-items:center;

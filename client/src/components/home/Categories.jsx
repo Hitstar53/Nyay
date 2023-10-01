@@ -69,57 +69,57 @@ const Categories = () => {
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Criminal Defence</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Corporate</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Family</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Real Estate</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Immigration</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Personal Injury</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle> Labour</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>IP / Patent </CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Tax</CategoryCardTitle>
            </CategoryCard>
            
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Environmental</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
            <CategoryCardImg></CategoryCardImg>
-           <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
+           <CategoryCardTitle>Public interest</CategoryCardTitle>
            </CategoryCard>
             
         
