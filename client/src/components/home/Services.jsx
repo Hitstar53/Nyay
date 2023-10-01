@@ -42,7 +42,7 @@ button{
   background-color:white;
   margin-right:5%;
   border-radius:0 20px 20px;
-  font-weight:600;
+  font-weight:700;
   font-size:1.1rem;
   color:
 }
@@ -68,14 +68,15 @@ box-shadow: 0 0 10px  hsl(0, 0%, 81%);
 
 `
 const ServiceIcon=styled.img`
-width:30%;
-height:30%;
+width:40%;
+height:40%;
 background-color:yellow;
 `
 const ServiceTitle=styled.div`
-margin:8% 0 ;
-font-weight:500;
-font-size:1.25rem;
+margin:6% 0 ;
+font-weight:700;
+font-size:1.1rem;
+color:var(--primary-color);
 `
 const ServiceDesc=styled.div`
 margin:1% 0 ;
@@ -103,19 +104,19 @@ const Services = () => {
 
     <ServicesCard>
       <ServiceIcon src={translate}/>
-      <ServiceTitle>Find Practitioners</ServiceTitle>
+      <ServiceTitle>Translate</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
     <ServicesCard>
 
       <ServiceIcon src={care}/>
-      <ServiceTitle>Find Practitioners</ServiceTitle>
+      <ServiceTitle>Legal Aid</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
     <ServicesCard>
     
       <ServiceIcon src={walking}/>
-      <ServiceTitle>Find Practitioners</ServiceTitle>
+      <ServiceTitle>Find Retired Judges</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
 
