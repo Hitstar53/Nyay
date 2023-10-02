@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import GavelIcon from '@mui/icons-material/Gavel'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
@@ -226,7 +227,8 @@ margin-bottom:2%;
 ` 
 
 
-const LawyerProfile = () => {
+const LawyerProfile = (props) => {
+  console.log(props.lawyerData)
   return (
     <div>
       <LawyerInfo>
@@ -235,27 +237,28 @@ const LawyerProfile = () => {
             <LawyerImg />
           </LawyerImgContainer>
           <LawyerNameBio>
-            <div className='name'>Yash Sonawane</div>
+            <div className='name'>
+              {props.lawyerData.Lawyer}
+            </div>
             <div className='bio'>
-              IIM Kozhikode (Bo’23) | Dean’s Merit List (Top 5%ile) | Accenture
-              Strategy Intern | Ex-ZS | Gold Medalist B.Tech CSE |Sr. Member -
-              IIMK PR Cell, Abakus, Women in Mgmt | ShARE
+              {props.lawyerData.Description}
             </div>
           </LawyerNameBio>
         </LawyerDesc>
         <LawyerStatsContainer>
           <LawyerType>
             <GavelIcon sx={{ margin: '0.2rem' }} />
-            Civil Litigation
+            {props.lawyerData.Category}
           </LawyerType>
 
           <LawyerExp>
-            <BusinessCenterIcon sx={{ margin: '0.2rem' }} />5 years
+            <BusinessCenterIcon sx={{ margin: '0.2rem' }} />
+            {props.lawyerData.Experience} Years
           </LawyerExp>
 
           <LawyerRating>
             <StarIcon sx={{ margin: '0.2rem', color: 'yellow' }} />
-            5.0
+            {props.lawyerData['User Rating']}
           </LawyerRating>
         </LawyerStatsContainer>
       </LawyerInfo>
@@ -268,7 +271,11 @@ const LawyerProfile = () => {
                 <div className='desc'>1:1 Video Call</div>
                 <div className='price'>$200</div>
             </SessionDesc>
-            <BookNow>Book Now</BookNow>
+              <BookNow>
+                <Link to='/user/book'>
+                  Book Now
+                </Link>
+              </BookNow>
         </SessionInfo>
     </Container>
 

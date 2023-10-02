@@ -256,7 +256,7 @@ export default function NavBar(props) {
               </ListItem>
             </NavLink>
             <NavLink
-              to="/lawyer/profile/65032cce40f29ac289ae4acc"
+              to="/lawyer/profile/6519d5e209c887835e6ba26a"
               style={{ textDecoration: "none", color: "inherit" }}
               onClick={toggleDrawer(anchor, false)}
             >

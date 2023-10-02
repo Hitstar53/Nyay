@@ -11,6 +11,11 @@ import styles from './PersonalInfo.module.css'
 import { Avatar } from '@mui/material';
 
 const PersonalInfo = (props) => {
+  const date = new Date(props.info.personalInfo.dob);
+  const day = date.getUTCDate().toString().padStart(2, '0');
+  const month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); 
+  const year = date.getUTCFullYear().toString();
+  const formattedDate = `${day}-${month}-${year}`;
     return (
       <div>
         <div className={styles.profileHeader}>
@@ -28,12 +33,10 @@ const PersonalInfo = (props) => {
             </h1>
             <h3 className="text-lg flex items-center gap-2 font-semibold">
               <i class="fa-solid fa-id-card"></i>
-              License: 3263BXBI2U3EY2
+              License: {props.info.licenseInfo.licenseNumber}
             </h3>
             <p className="text-sm">
-              IIM Kozhikode (Bo'23) | Dean's Merit List (Top 5%ile) | Accenture
-              Strategy Intern | Ex-ZS | Gold Medalist B.Tech CSE |Sr. Member -
-              IIMK PR Cell, Abakus, Women in Mgmt | ShARE
+            {props.info.bio}
             </p>
           </div>
         </div>
@@ -45,10 +48,10 @@ const PersonalInfo = (props) => {
             <AlternateEmailIcon /> {props.info.email}
           </span>
           <span className={styles.pills}>
-            <LinkedInIcon /> sushantk7.linkedin.com
+            <LinkedInIcon /> {props.info.linkedin}
           </span>
           <span className={styles.pills}>
-            <LanguageIcon /> advsushant.com
+            <LanguageIcon /> {props.info.website}
           </span>
         </div>
         <h2 className={styles.heading}>Personal Information</h2>
@@ -58,42 +61,42 @@ const PersonalInfo = (props) => {
               <MaleSharpIcon /> 
               <p>Gender</p>
             </span>
-            <div>Male</div>
+            <div>{props.info.personalInfo.gender}</div>
           </div>
           <div>
             <span className={styles.label}>
               <CalendarMonthIcon />
               <p>Date of Birth</p>
             </span>
-            <div>05/05/1973</div>
+            <div>{formattedDate}</div>
           </div>
           <div>
             <span className={styles.label}>
               <LocationOnIcon />
               <p>Location</p>
             </span>
-            <div>Mumbai, Maharashtra</div>
+            <div>{props.info.personalInfo.city},{props.info.personalInfo.state}</div>
           </div>
           <div>
             <span className={styles.label}>
               <AlternateEmailIcon />
               <p>Email</p>
             </span>
-            <div>sushant99@lawyer.com</div>
+            <div>{props.info.personalInfo.officeEmail}</div>
           </div>
           <div>
             <span className={styles.label}>
               <CallIcon />
               <p>Phone Number</p>
             </span>
-            <div>+022 6788 4350</div>
+            <div>{props.info.personalInfo.officePhone}</div>
           </div>
           <div>
             <span className={styles.label}>
               <BusinessIcon />
               <p>Office Address</p>
             </span>
-            <div>111/Bhoomi Heights, Near Zoom Plaza, Andheri(W)</div>
+            <div>{props.info.personalInfo.officeAdd}</div>
           </div>
         </div>
       </div>

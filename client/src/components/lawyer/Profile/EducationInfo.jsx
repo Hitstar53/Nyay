@@ -1,26 +1,26 @@
 import React from 'react'
 import styles from './EducationInfo.module.css'
 
-const EducationInfo = () => {
+const EducationInfo = (props) => {
   return (
     <div>
       <h2 className={styles.heading}>Educational Information</h2>
             <div className={styles.infoContainer}>
                 <div>
                     <span className={styles.label}>Institute</span>
-                    <div>National Institute of Law, Gujurat</div>
+                    <div>{props.info.institute}</div>
                 </div>
                 <div>
                     <span className={styles.label}>Graduation Year</span>
-                    <div>2000</div>
+                    <div>{props.info.gradYear}</div>
                 </div>
                 <div>
                     <span className={styles.label}>Degree</span>
-                    <div>LLB</div>
+                    <div>{props.info.degree}</div>
                 </div>
                 <div>
                     <span className={styles.label}>Result</span>
-                    <div>Distinction</div>
+                    <div>{props.info.result}</div>
                 </div>
             </div>
     </div>

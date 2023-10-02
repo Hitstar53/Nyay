@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLoaderData, json } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -6,8 +7,11 @@ import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Appointreq from './Appointreq'
 import ActiveCase from './ActiveCase'
 import styles from "./Dashboard.module.css";
+import ServerUrl from "../../../constants";
 
 const Dashboard = () => {
+    const data = useLoaderData();
+    console.log(data);
     const dashboard = styles.dashboard + " flex flex-col gap-8 p-8";
     // const Theme = createTheme({
     //   palette: {
@@ -22,7 +26,9 @@ const Dashboard = () => {
             <h1 className="text-base sm:text-lg sm:p-1 font-semibold heading">
               Appointment Requests
             </h1>
-            <Appointreq />
+            <Appointreq
+              info={data.aptmntData}
+            />
           </div>
           <div className="flex flex-col gap-4 w-1/4">
             <h1 className="text-base sm:text-lg sm:p-1 font-semibold heading">
@@ -59,3 +65,25 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+
+export async function loader({ params }) {
+  const response1 = await fetch(
+    `${ServerUrl}/lawyer/appointments/6519d5e209c887835e6ba26a`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  if (!response1.ok) {
+    throw json(
+      { message: "Could not fetch profile information" },
+      { status: 422 }
+    );
+  }
+  if (response1.ok) {
+    const aptmntData = await response1.json();
+    return { aptmntData };
+  }
+}

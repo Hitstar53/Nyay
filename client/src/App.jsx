@@ -5,12 +5,13 @@ import RootLayout from "./pages/RootLayout";
 import ErrorPage from "./pages/ErrorPage";
 import Login from "./components/login/Login";
 import Home from "./components/home/Home";
-import Dashboard from './components/lawyer/Dashboard/Dashboard';
+import Dashboard, {loader as DashboardLoader} from './components/lawyer/Dashboard/Dashboard';
 import ResearchAid from './components/lawyer/Research/ResearchAid';
 import Probono from './components/lawyer/Probono/Probono';
 import FindLawyer from './components/user/findLawyer/FindLawyer';
-import './App.css'
 import Profile, {loader as ProfileLoader} from './components/lawyer/Profile/Profile';
+import PostBooking from './components/user/postBooking/PostBooking';
+import './App.css'
 
 const router = createBrowserRouter([
   {
@@ -26,12 +27,13 @@ const router = createBrowserRouter([
         children: [
           { path: "home", element: <Home /> },
           { path: "find lawyers", element: <FindLawyer /> },
+          { path: "book", element: <PostBooking /> },
         ],
       },
       {
         path: "lawyer",
         children: [
-          { path: "dashboard", element: <Dashboard /> },
+          { path: "dashboard", element: <Dashboard />, loader: DashboardLoader },
           { path: "research", element: <ResearchAid /> },
           { path: "probono", element: <Probono /> },
           { path: "profile/:id", element: <Profile />, loader: ProfileLoader },

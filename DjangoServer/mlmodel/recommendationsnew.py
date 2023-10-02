@@ -10,7 +10,6 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-
 def suggest_lawyers(user_legal_problem, num_lawyers=5):
     df_legal_problems = pd.read_csv('DjangoServer/legal_problems.csv')
     df_lawyers = pd.read_csv('DjangoServer/lawyers.csv')
@@ -57,6 +56,6 @@ def suggest_lawyers(user_legal_problem, num_lawyers=5):
     filtered_lawyers = filtered_lawyers.sort_values(by='User Rating', ascending=False)
 
     # Get the top N lawyers
-    top_lawyers = filtered_lawyers.head(num_lawyers)
+    top_lawyers = filtered_lawyers.head(num_lawyers).to_dict(orient="records")
 
-    return {"category" : predicted_category, "lawyers" : top_lawyers}
+    return top_lawyers

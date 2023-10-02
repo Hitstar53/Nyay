@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import UserNav from '../components/UserNav'
 import SchoolIcon from '@mui/icons-material/School'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import StarIcon from '@mui/icons-material/Star'
 import VideoCallIcon from '@mui/icons-material/VideoCall';
-import Footer from '../components/Footer'
+import Button from '@mui/material/Button';
+import ServerUrl from '../../../constants.js'
 
 const Container = styled.div`
   height: 95vh;
@@ -124,12 +124,39 @@ div{
 const CalendarContainer = styled.div`
   flex: 1;
   height: 100%;
-  background-color: red;
+  background-color: #0d265c;
 `
 const PostBooking = () => {
+  const appointmentHandler = (e) => {
+    e.preventDefault();
+    const aptmnt = async () => {
+      const response = await fetch(
+        `${ServerUrl}/client/appointments/65032f9144f645e19172fdb8`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            description: "My tenant committed suicide in my flat.",
+            lawyerName: "John Doe",
+            aptDate: "2023-09-25",
+            startTime: "10:00",
+            endTime: "12:00",
+          }),
+        }
+      );
+      if (!response.ok) {
+        console.log("error");
+      } else {
+        const data = await response.json();
+        console.log(data);
+      }
+    };
+    aptmnt();
+  }
   return (
     <div>
-      <UserNav />
       <Container>
         <BookingCard>
           <BookingContent>
@@ -162,16 +189,28 @@ const PostBooking = () => {
                 <div>Case Review</div>
                 <div>Legal Counsel</div>
                 <div>Best Steps</div>
-
             </ButtonGrp>
             </BookingInfoCard>
-               
-    
           </BookingContent>
-          <CalendarContainer />
+          <CalendarContainer>
+            <Button
+              variant='contained'
+              sx={{
+                width: '80%',
+                height: '10%',
+                backgroundColor: '#0d265c',
+                color: 'white',
+                borderRadius: '20px',
+                margin: '5% 10%',
+                fontSize: '15px',
+              }}
+              onClick={appointmentHandler}
+            >
+              Make Appointment
+            </Button>
+          </CalendarContainer>
         </BookingCard>
       </Container>
-      <Footer/>
     </div>
   )
 }

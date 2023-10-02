@@ -11,7 +11,7 @@ width:100%;
 height:60vh;
 background-color:blue;
 `
-const Container=styled.div`
+const Container = styled.div`
 width:100%;
 height:200vh;
 display:flex;
@@ -19,7 +19,7 @@ background-color:#f6f8faff;
 align-items:center;
 flex-direction:column;
 `
-const SearchContainer=styled.div`
+const SearchContainer = styled.div`
     width:80%;
     height:13%;
     background-color:#e5f1fcff;
@@ -96,20 +96,21 @@ align-items:center;
 
 
 const FindLawyer = () => {
-    const [search,setSearch] = useState('')
-    const [lawyer,setLawyer] = useState('')
+    const [search, setSearch] = useState('')
+    const [lawyer, setLawyer] = useState('')
+    const [selectedLawyerData, setSelectedLawyerData] = useState(null);
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
     const handleSubmit = (e) => {
         e.preventDefault()
         const recommended = async () => {
-            const response = await fetch(`${ServerUrl}/recommend/`,{
-                method:'POST',
-                headers:{
-                    'Content-Type':'application/json'
+            const response = await fetch(`${ServerUrl}/recommend/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
                 },
-                body:JSON.stringify({
+                body: JSON.stringify({
                     prompt: search
                 })
             })
@@ -126,55 +127,62 @@ const FindLawyer = () => {
     }
     return (
         <div>
-        <Hero/>
-        <Container>
-            <SearchContainer>
-                <h1 >Type in your case details</h1>
+            <Hero />
+            <Container>
+                <SearchContainer>
+                    <h1 >Type in your case details</h1>
                     <Search>
-                    <TextField
-                        placeholder='Type in your case details'
-                        variant='outlined'
-                        style={{width:'80%',borderRadius:'10px',backgroundColor:'white',marginLeft:'2%'}}
-                        onChange={handleChange}
-                    />
-                    <Button
-                        content='Search'
-                        variant='contained'
-                        style={{width:'15%',height:'100%',borderRadius:'20px',backgroundColor:'#0d265c',color:'white',marginLeft:'1%'}}
-                        onClick={handleSubmit}
-                    />
-                </Search>
-            </SearchContainer>
-            <Filter>
-                <div className='sort'>SortBy</div>
-                <div>Category</div>
-                <div>Location</div>
-                <div>Price</div>
-                <div>Experience</div>
-            </Filter>
-            <Lawyers>
-                <LawyerList>
-                    {lawyer && lawyer.data.lawyers.Lawyer ? (
-                        lawyer.data.lawyers.Lawyer.map((vakil, index) => (
-                        <LawyerListCard
-                            key={index}
-                            name={vakil}
-                            category={lawyer.data.lawyers.Category[index]}
-                            description={lawyer.data.lawyers.Description[index]}
-                            experience={lawyer.data.lawyers.Experience[index]}
-                            userRating={lawyer.data.lawyers["User Rating"][index]}
+                        <TextField
+                            placeholder='Type in your case details'
+                            variant='outlined'
+                            style={{ width: '80%', borderRadius: '10px', backgroundColor: 'white', marginLeft: '2%' }}
+                            onChange={handleChange}
                         />
+                        <Button
+                            variant='contained'
+                            style={{ width: '15%', height: '100%', borderRadius: '20px', backgroundColor: '#0d265c', color: 'white', marginLeft: '1%' }}
+                            onClick={handleSubmit}
+                        >
+                            Search
+                        </Button>
+                    </Search>
+                </SearchContainer>
+                <Filter>
+                    <div className='sort'>SortBy</div>
+                    <div>Category</div>
+                    <div>Location</div>
+                    <div>Price</div>
+                    <div>Experience</div>
+                </Filter>
+                <Lawyers>
+                    <LawyerList>
+                        {lawyer && lawyer.data ? ( 
+                            lawyer.data.map((lawyerData, index) => (
+                            <button
+                                onClick={() => setSelectedLawyerData(lawyerData)}
+                            >
+                                <LawyerListCard 
+                                    key={index} 
+                                    lawyerData={lawyerData}
+                                    setSelectedLawyerData={setSelectedLawyerData}
+                                />
+                            </button>
                         ))
-                    ) : (
-                        <div>No lawyer data available.</div>
-                    )}
-                </LawyerList>
-                <LawyerProfileContainer>
-                    <LawyerProfile>
-                    </LawyerProfile>
-                </LawyerProfileContainer>
-            </Lawyers>
-        </Container>
+                        ) : (
+                            <div>No lawyer data available.</div>
+                        )}
+                    </LawyerList>
+                    <LawyerProfileContainer>
+                        {selectedLawyerData ? (
+                            <LawyerProfile 
+                                lawyerData={selectedLawyerData}
+                            />
+                        ) : (
+                            <div>No lawyer selected.</div>
+                        )}
+                    </LawyerProfileContainer>
+                </Lawyers>
+            </Container>
         </div>
     )
 }

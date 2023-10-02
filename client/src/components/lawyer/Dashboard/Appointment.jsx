@@ -11,26 +11,26 @@ const data = {
   date: "2/27/2023",
 }
 
-const Appointment = () => {
+const Appointment = (props) => {
   return (
     <div className={styles.cardItem}>
       <div className={styles.col1}>
         <p>
-          {dayjs(data.date).format("ddd")}
+          {dayjs(props.aptDate).format("ddd")}
         </p>
         <p className='text-4xl'>
-          {dayjs(data.date).format("DD")}
+          {dayjs(props.aptDate).format("DD")}
         </p>
         <p>
-          {dayjs(data.date).format("MMM")}
+          {dayjs(props.aptDate).format("MMM")}
         </p>
       </div>
       <div className={styles.col2}>
         <p className='text-xl'>
-          {dayjs(data.date).format("hh:mm A")}
+          {dayjs(props.aptDate).format("hh:mm A")}
         </p>
         <p className='text-base font-normal'>
-          60 mins
+          {props.startTime}
         </p>
       </div>
       <div className={styles.col3}>
@@ -45,9 +45,9 @@ const Appointment = () => {
             }}
             className={styles.avatar}
           />
-          <h1>{data.sender}</h1>
+          <h1>{props.clientName}</h1>
         </div>
-        <p>{data.issue}</p>
+        <p>{props.description}</p>
       </div>
       <div className={styles.col4}>
         <button className={styles.accept}>Accept</button>

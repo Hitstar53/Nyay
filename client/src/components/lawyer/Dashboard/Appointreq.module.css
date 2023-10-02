@@ -19,7 +19,7 @@
 .cardItem {
     padding: 1rem;
     display: grid;
-    row-gap: 0.5rem;
+    gap: 1rem;
     grid-template-columns: 1fr 1fr 5fr 1fr;
     background-color: var(--card-2);
 }

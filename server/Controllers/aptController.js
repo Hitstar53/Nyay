@@ -14,15 +14,17 @@ const setApt = asyncHandler(async (req, res) => {
         const clientName = client.fullName;
         const clientId = client._id;
         const { description, lawyerName, aptDate, startTime, endTime } = req.body;
+        console.log("lawyer name is" + lawyerName);
         const lawyer = await Lawyer.find({fullName: lawyerName});
-        const lawyerId = lawyer._id;
+        // console.log(lawyer);
+        // console.log("lawyer name is" + lawyerId);
         const parsedDate = new Date(aptDate);
 
         const appointment = await Appointment.create({
             clientName: clientName,
             lawyerName: lawyerName,
             client: clientId,
-            lawyer: lawyerId,
+            // lawyer: lawyerId,
             description: description,
             aptDate: parsedDate,
             startTime: startTime,
@@ -34,7 +36,7 @@ const setApt = asyncHandler(async (req, res) => {
         }
 
         await User.updateOne({ _id: clientId }, { $push: { appointment: new mongoose.Types.ObjectId(appointment._id) } });
-        await Lawyer.updateOne({ _id: lawyerId }, { $push: { appointment: new mongoose.Types.ObjectId(appointment._id) } });
+        await Lawyer.updateOne({ fullName: lawyerName }, { $push: { appointment: new mongoose.Types.ObjectId(appointment._id) } });
         res.status(200).json(appointment);
 
     } catch (err) {
@@ -93,8 +95,8 @@ const getApt = asyncHandler(async (req, res) => {
 
         let aptList = [];
         appointments.map((appointment) => {
-            const { _id, lawyerName, clientName, description } = appointment;
-            aptList.push({ _id, lawyerName, clientName, description });
+            const { _id, lawyerName, clientName, description, aptDate, startTime, endTime } = appointment;
+            aptList.push({ lawyerName, clientName, description, aptDate, startTime, endTime });
         })
 
         res.status(200).json(aptList);

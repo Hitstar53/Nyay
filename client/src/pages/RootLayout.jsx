@@ -5,6 +5,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "react-responsive";
 import NavBar from '../components/UI/Navbar';
+import Footer from '../components/UI/Footer';
 import { Outlet, useNavigation } from 'react-router-dom'
 
 const RootLayout = () => {
@@ -54,6 +55,7 @@ const RootLayout = () => {
               <Outlet />
             )}
         </Box>
+        <Footer />
       </Box>
     );
 }

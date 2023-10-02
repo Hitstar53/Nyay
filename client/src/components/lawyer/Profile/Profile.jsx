@@ -14,10 +14,10 @@ const Profile = () => {
   const data = useLoaderData();
   return (
     <div className={styles.profilePage}>
-      <PersonalInfo info={data.personalData} />
+      <PersonalInfo info={data.primaryData} />
       <SkillSet />
-      <LicenseInfo />
-      <EducationInfo />
+      <LicenseInfo info={data.primaryData.licenseInfo} />
+      <EducationInfo info={data.primaryData.educationInfo}/>
       <NotableCases />
       <Publications />
       <Awards />
@@ -44,7 +44,7 @@ export async function loader({ params }) {
     );
   }
   if (response1.ok) {
-    const personalData = await response1.json();
-    return { personalData };
+    const primaryData = await response1.json();
+    return { primaryData };
   }
 }

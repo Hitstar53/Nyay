@@ -12,6 +12,7 @@ const Card = styled.div`
   flex-direction:column;
   justify-content:center;
   gap:7%;
+  cursor:pointer;
   &:hover{
     ${'' /* border:1px solid #0B98DA; */}
     box-shadow: 0 0 4px  hsl(0, 0%, 81%);
@@ -79,13 +80,13 @@ const LawyerListCard = (props) => {
         <LawyerInfo>
           <LawyerImg />
           <LawyerDesc>
-            <div className='name'>{props.name}</div>
-            <div className='shortDesc'>{props.experience} years | Delhi | {props.category} </div>
+            <div className='name'>{props.lawyerData.Lawyer}</div>
+            <div className='shortDesc'>{props.lawyerData.Experience} years | Delhi | {props.lawyerData.Category} </div>
           </LawyerDesc>
 
           <LaywerStars>
             <StarIcon sx={{ color: '#fcb903ff' }} />
-            <div className='rating'>{props.userRating}</div>
+            <div className='rating'>{props.lawyerData['User Rating']}</div>
           </LaywerStars>
         </LawyerInfo>
 

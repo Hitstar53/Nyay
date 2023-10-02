@@ -4,7 +4,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import logo from '../images/logo.png'
+import GavelSharpIcon from '@mui/icons-material/GavelSharp';
+// import logo from '../images/logo.png'
 
 const Container=styled.div`
 width:100%;
@@ -69,42 +70,46 @@ font-weight:400;
 const Footer = () => {
   return (
     <div>
-    <Container>
-      <LogoContainer>
-        <Logo>
-          <LogoImg src={logo} />
-          <div>NYAY</div>
-        </Logo>
-        <Links>
-          <FacebookIcon sx={{ fontSize: 40 , color:'#0d265c'}}/>
-          <InstagramIcon sx={{ fontSize: 40 ,color:'#0d265c' }}/>
-          <TwitterIcon  sx={{ fontSize: 40, color:'#0d265c' }}/>
-          <LinkedInIcon  sx={{ fontSize: 40 , color:'#0d265c' }}/>
-        </Links>
-      </LogoContainer>
+      <Container>
+        <LogoContainer>
+          <Logo>
+            <GavelSharpIcon
+              sx={{ 
+                display: { xs: "none", md: "flex" }, 
+                mr: 1,
+                fontSize: 40,
+              }}
+            />
+            <div>NYAY</div>
+          </Logo>
+          <Links>
+            <FacebookIcon sx={{ fontSize: 40, color: "#0d265c" }} />
+            <InstagramIcon sx={{ fontSize: 40, color: "#0d265c" }} />
+            <TwitterIcon sx={{ fontSize: 40, color: "#0d265c" }} />
+            <LinkedInIcon sx={{ fontSize: 40, color: "#0d265c" }} />
+          </Links>
+        </LogoContainer>
 
-      <LinksContainer>
-        <div className='title'>For Users</div>
-        <div>Home</div>
-        <div>About</div>
-        <div>Contact Us</div>
-        <div>Customer Support</div>
-        <div>Privacy Policy</div>
-      </LinksContainer>
+        <LinksContainer>
+          <div className="title">For Users</div>
+          <div>Home</div>
+          <div>About</div>
+          <div>Contact Us</div>
+          <div>Customer Support</div>
+          <div>Privacy Policy</div>
+        </LinksContainer>
 
-      <LinksContainer>
-        <div className='title'>For Law Practitioner</div>
-        <div>About</div>
-        <div>Blog</div>
-        <div>Contact Us</div>
-        <div>Privacy Policy</div>
-        <div>Terms & Conditions</div>
-      </LinksContainer>
- 
-    </Container>
-      
+        <LinksContainer>
+          <div className="title">For Law Practitioner</div>
+          <div>About</div>
+          <div>Blog</div>
+          <div>Contact Us</div>
+          <div>Privacy Policy</div>
+          <div>Terms & Conditions</div>
+        </LinksContainer>
+      </Container>
     </div>
-  )
+  );
 }
 
 export default Footer
