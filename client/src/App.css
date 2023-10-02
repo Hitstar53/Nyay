@@ -11,11 +11,12 @@
 }
 
 /* variable for theme switching */
-
+/* #EEFAFF
+#00117B */
 :root {
   --primary-color: #0D265C;
   --secondary-color: #0B98DA;
-  /* --secondary-color: #d6eef9; */
+  /* --secondary-color: #e7f3f8; */
   --tertiary-color: #0EA20B;
   --accent-color: #A5DBF4;
   --bg-1: #F4F5F7;

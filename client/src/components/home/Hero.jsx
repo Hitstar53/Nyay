@@ -6,33 +6,33 @@ import PaidIcon from '@mui/icons-material/Paid';
 import GavelIcon from '@mui/icons-material/Gavel';
 import PlaceIcon from '@mui/icons-material/Place';
 import lawfirm from '../../assets/imgs/law-firm.png'
-import item from '../../assets/imgs/item.jpg'
 import heroimg from '../../assets/imgs/heroimg.svg'
 import styled from "styled-components";
 
 const Wrapper=styled.div`
 width:100%;
-height:70vh;
+height:65vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background-color:;
+background-color:#e7f3f8;
 
 `
 const HeroContent=styled.div`
 flex:4;
-height:80%;
+height:100%;
 z-index:2;
 display:flex;
 flex-direction:column;
 padding: 0 0;
 span{
   width:60%;
-  margin-left:20%;
+  margin-left:15%;
 }
 .herotitle{
   font-weight:900;
   font-size:5rem;
+  margin-top:5%;
   background: linear-gradient(
         to right,
         #0D265C 10%,
@@ -82,17 +82,17 @@ span{
 }
 }
 .description{
-  font-weight:600;
+  font-weight:500;
   font-size:1rem;
   margin-top:1%;
-  
+  color:grey;
 }
 `
 const Tab = styled.div`
-width:100%;
-height:35%;
+width:90%;
+height:30%;
 background-color:white;
-margin:4% 20% 0 ;
+margin:2% 0 0 15% ;
 z-index:3;
 border-radius:0 20px 20px;
 display:flex;
@@ -109,7 +109,7 @@ display:flex;
 align-items:center;
 .title{
   font-weight:700;
-  font-size:1.2rem;
+  font-size:1.1rem;
   color:var(--primary-color);
 }
 .process{
@@ -194,11 +194,11 @@ const Hero = () => {
     <HeroContent>
       <span className="herotitle">JUSTICE</span>
       <span className="tagline">Now served at Home !</span>
-      <span className="description">" Find your Legal Practitioners from the comfort of your Home " </span>
+      <span className="description">" Find your Legal Practitioners from the comfort of your Home , Book appointments and get your legal queries resolved " </span>
       <Tab>
       <TopContainer>
         <div className="title">Book Appointment</div>
-        <PersonSearchIcon className="icon" sx={{marginLeft:'5%',color:'grey'}}></PersonSearchIcon>
+        <PersonSearchIcon className="icon" sx={{marginLeft:'3%',color:'grey'}}></PersonSearchIcon>
         <div className="process">Find Lawyers</div>
 
         <WatchLaterIcon sx={{marginLeft:'3%',color:'grey'}}></WatchLaterIcon>
@@ -239,10 +239,10 @@ const Hero = () => {
 
     <HeroImgContainer >
     <div class="relative w-full max-w-lg">
-      <div class="absolute top-5 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div class="absolute top-4 right-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div class="absolute top-60 left-0 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-        <div class="absolute top-60 left-60 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      <div class="absolute top-5 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div class="absolute top-4 right-0 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute top-60 left-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div class="absolute top-40 left-60 w-72 h-72 bg-pink-300 ounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
     <HeroImg >

@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import CheckCircleSharpIcon from '@mui/icons-material/CheckCircleSharp'
-
+import findlawyer from '../../assets/imgs/findlawyer.png'
+import translate from '../../assets/imgs/translate.png'
+import legalaid from '../../assets/imgs/legalaid.png'
+import retired from '../../assets/imgs/retired.png'
 const Wrapper = styled.div`
   width: 80%;
   height: auto;
@@ -23,7 +26,18 @@ const ServiceWrapper = styled.div`
 const ServiceImg = styled.div`
   flex: 2;
   height: 100%;
-  overflow:hidden;
+  position:relative;
+  background-color:white;
+  display:flex;
+  justify-content:center;
+ 
+  img{
+    margin-top:8%;
+    position:absolute;
+    width:77%;
+    height:85%;
+    object-fit:cover;
+  }
 `
 const ServiceDesc = styled.div`
   flex: 4;
@@ -76,10 +90,10 @@ const ServiceDescription = () => {
       <ServiceWrapper>
         <ServiceImg>
           <div class='relative w-full max-w-lg'>
-            <div class='absolute top-5 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob'></div>
-            <div class='absolute top-4 right-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
-            <div class='absolute top-60 left-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
+            <div class='absolute top-10 right-10 w-32 h-32 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
+            <div class='absolute top-60 left-10 w-32 h-32 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
           </div>
+          <img src={findlawyer}></img>
         </ServiceImg>
         <ServiceDesc>
           <ServiceTitle>FIND LAWYER</ServiceTitle>
@@ -155,21 +169,21 @@ const ServiceDescription = () => {
           <Button>Explore</Button>
         </ServiceDesc>
         <ServiceImg>
-          <div class='relative w-full max-w-lg'>
-            <div class='absolute top-5 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob'></div>
-            <div class='absolute top-4 right-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
-            <div class='absolute top-60 left-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
+        <div class='relative w-full max-w-lg'>
+            <div class='absolute top-10 left-10 w-32 h-32 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob'></div>
+            <div class='absolute top-60 right-10 w-32 h-32 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
           </div>
+          <img src={translate}></img>
         </ServiceImg>
       </ServiceWrapper>
 
       <ServiceWrapper>
       <ServiceImg>
-          <div class='relative w-full max-w-lg'>
-            <div class='absolute top-5 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob'></div>
-            <div class='absolute top-4 right-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
-            <div class='absolute top-60 left-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
+      <div class='relative w-full max-w-lg'>
+            <div class='absolute top-8 right-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
+            <div class='absolute top-60 left-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
           </div>
+          <img src={legalaid}/>
         </ServiceImg>
         <ServiceDesc>
           <ServiceTitle>FIND LAWYER</ServiceTitle>
@@ -207,6 +221,52 @@ const ServiceDescription = () => {
           <Button>Explore</Button>
         </ServiceDesc>
       </ServiceWrapper>
+
+      <ServiceWrapper>
+        <ServiceDesc>
+          <ServiceTitle>FIND LAWYER</ServiceTitle>
+          <ServiceTitleDesc>
+            Hello ASDJFKLASJDF KLAJDSF;LASD A;LDKJF{' '}
+          </ServiceTitleDesc>
+          <ServiceInfo>
+            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
+            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
+            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
+            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
+          </ServiceInfo>
+
+          <ServiceInfoPointers>
+            <CheckCircleSharpIcon
+              sx={{
+                margin: '1%',
+                fontSize: '1.3rem',
+                color: 'var(--secondary-color)'
+              }}
+            />
+            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
+          </ServiceInfoPointers>
+          <ServiceInfoPointers>
+            <CheckCircleSharpIcon
+              sx={{
+                margin: '1%',
+                fontSize: '1.3rem',
+                color: 'var(--secondary-color)'
+              }}
+            />
+            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
+          </ServiceInfoPointers>
+
+          <Button>Explore</Button>
+        </ServiceDesc>
+        <ServiceImg>
+          <div class='relative w-100% max-w-lg'>
+            <div class='absolute top-4 right-0 w-32 h-32 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
+            <div class='absolute top-60 left-0 w-32 h-32 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
+          </div>
+          <img src={retired}></img>
+        </ServiceImg>
+      </ServiceWrapper>
+
     </Wrapper>
   )
 }

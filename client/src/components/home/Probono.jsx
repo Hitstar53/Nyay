@@ -156,7 +156,7 @@ const ProBono = () => {
 
           <TestimonialColumn>
             <TestimonialCard>
-              <TestimonialImg/>
+              <TestimonialImg src={earthquake}/>
               <TestimonialDesc>
                 <div className='location'>MUMBAI , MH</div>
                 <div className='title'>Earthquake Disaster</div>
@@ -171,7 +171,7 @@ const ProBono = () => {
 
           <TestimonialColumn>
             <TestimonialCard className='two'>
-              <TestimonialImg/>
+              <TestimonialImg src={earthquake}/>
               <TestimonialDesc>
                 <div className='location'>MUMBAI , MH</div>
                 <div className='title'>Earthquake Disaster</div>
@@ -187,7 +187,7 @@ const ProBono = () => {
           
           <TestimonialColumn>
             <TestimonialCard >
-              <TestimonialImg/>
+              <TestimonialImg src={earthquake}/>
               <TestimonialDesc>
                 <div className='location'>MUMBAI , MH</div>
                 <div className='title'>Earthquake Disaster</div>

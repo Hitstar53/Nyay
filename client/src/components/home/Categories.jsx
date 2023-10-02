@@ -1,5 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import civil from '../../assets/imgs/civil-right.png'
+import criminaldefence from '../../assets/imgs/criminal-defence.png'
+import corporate from '../../assets/imgs/corporate.png'
+import family from '../../assets/imgs/family.png'
+import realestate from '../../assets/imgs/realestate.png'
+import labour from '../../assets/imgs/labour.png'
+import injury from '../../assets/imgs/injury.png'
+import immigration from '../../assets/imgs/immigration.png'
+import tex from '../../assets/imgs/tex.png'
+import environmental from '../../assets/imgs/environmental.png'
+import publicinterest from '../../assets/imgs/public.png'
+import ip from '../../assets/imgs/ip.png'
 
 const Wrapper = styled.div`
 margin-top:2%;
@@ -28,13 +40,12 @@ row-gap:7%;
 const CategoryCard = styled.div`
 width:10%;
 height:40%;
-${'' /* background-color:#E3F1F8; */}
 border-radius:10px;
-border:1px solid var(--secondary-color);
+box-shadow: 0 0 10px  #e7f3f8;
+${'' /* border:1px solid var(--secondary-color); */}
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:center;
 transition: all 0.4s ease;
 &:hover{
 
@@ -42,18 +53,18 @@ transition: all 0.4s ease;
 }
  `
 const CategoryCardImg=styled.img`
-height:55%;
-width:60%;
+height:70%;
+width:85%;
+margin:5%;
 `
 const CategoryCardTitle=styled.div`
 display:flex;
 flex-directon:column;
 justify-content:center;
-margin-top:6%;
 font-weight:600;
 font-size:13px;
 color:#0d265c;
-
+margin-top:2%;
 `
  
 
@@ -63,62 +74,62 @@ const Categories = () => {
     <Title>Legal Categories</Title>
       <CategoryContainer>
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={civil}></CategoryCardImg>
            <CategoryCardTitle>Civil Litigation</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={criminaldefence}></CategoryCardImg>
            <CategoryCardTitle>Criminal Defence</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={corporate}></CategoryCardImg>
            <CategoryCardTitle>Corporate</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={family}></CategoryCardImg>
            <CategoryCardTitle>Family</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={realestate}></CategoryCardImg>
            <CategoryCardTitle>Real Estate</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg ></CategoryCardImg>
+           <CategoryCardImg src={immigration}></CategoryCardImg>
            <CategoryCardTitle>Immigration</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={injury}></CategoryCardImg>
            <CategoryCardTitle>Personal Injury</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={labour}></CategoryCardImg>
            <CategoryCardTitle> Labour</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={ip}></CategoryCardImg>
            <CategoryCardTitle>IP / Patent </CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={tex}></CategoryCardImg>
            <CategoryCardTitle>Tax</CategoryCardTitle>
            </CategoryCard>
            
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={environmental}></CategoryCardImg>
            <CategoryCardTitle>Environmental</CategoryCardTitle>
            </CategoryCard>
 
            <CategoryCard>
-           <CategoryCardImg></CategoryCardImg>
+           <CategoryCardImg src={publicinterest}></CategoryCardImg>
            <CategoryCardTitle>Public interest</CategoryCardTitle>
            </CategoryCard>
             
