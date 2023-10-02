@@ -47,7 +47,7 @@ const Appointment = (props) => {
           />
           <h1>{props.clientName}</h1>
         </div>
-        <p>{props.description}</p>
+        <p>{data.issue}</p>
       </div>
       <div className={styles.col4}>
         <button className={styles.accept}>Accept</button>

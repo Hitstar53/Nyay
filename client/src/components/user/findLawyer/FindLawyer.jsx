@@ -4,7 +4,7 @@ import LawyerListCard from './LawyerListCard'
 import LawyerProfile from './LawyerProfile'
 import { TextField } from '@mui/material'
 import Button from '@mui/material/Button';
-import ServerUrl from '../../../constants.js'
+import { DjangoUrl } from '../../../constants'
 
 const Hero = styled.div`
 width:100%;
@@ -105,7 +105,7 @@ const FindLawyer = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const recommended = async () => {
-            const response = await fetch(`${ServerUrl}/recommend/`, {
+            const response = await fetch(`${DjangoUrl}/recommend/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
