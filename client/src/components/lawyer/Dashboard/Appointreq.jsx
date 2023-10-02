@@ -7,7 +7,6 @@ const Appointreq = (props) => {
     <div className={styles.card}>
       <div className={styles.inner}>
         {props.info.map((apt) => (
-          console.log(apt),
           <Appointment
             key={apt._id}
             id={apt._id}
