@@ -15,7 +15,8 @@ justify-content:center;
 align-items:center;
 gap:10%;
 margin-top:7%;
-border-top:2px solid #0d265c;
+border-top:1px solid #0d265c;
+background-color:#e7f3f8;
 `
 const LogoContainer=styled.div`
 width:30%;
@@ -40,7 +41,6 @@ div{
 const LogoImg=styled.img`
 width:17%;
 height:65%;
-background-color:red;
 object-fit :cover;
 `
 const Links = styled.div`
@@ -53,15 +53,14 @@ margin-top:3%;
 const LinksContainer=styled.div`
 width:20%;
 height:80%;
-background-color:white;
 display:flex;
 flex-direction:column;
 justify-content:space-around;
 font-size:15px;
-font-weight:400;
+font-weight:500;
 
 .title{
-  font-size:17px;
+  font-size:1.1rem;
   font-weight:700;
   color:#0d265c;
 }
@@ -80,7 +79,7 @@ const Footer = () => {
                 fontSize: 40,
               }}
             />
-            <div>NYAY</div>
+            <div>NYAAY</div>
           </Logo>
           <Links>
             <FacebookIcon sx={{ fontSize: 40, color: "#0d265c" }} />

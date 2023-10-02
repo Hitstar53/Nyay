@@ -11,7 +11,7 @@ import styled from "styled-components";
 
 const Wrapper=styled.div`
 width:100%;
-height:65vh;
+height:68vh;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -89,7 +89,7 @@ span{
 }
 `
 const Tab = styled.div`
-width:90%;
+width:89%;
 height:30%;
 background-color:white;
 margin:2% 0 0 15% ;

@@ -226,7 +226,7 @@ const ServiceDescription = () => {
         <ServiceDesc>
           <ServiceTitle>FIND LAWYER</ServiceTitle>
           <ServiceTitleDesc>
-            Hello ASDJFKLASJDF KLAJDSF;LASD A;LDKJF{' '}
+            Get Access to Quality Legal Practitioners for all your Legal Needs
           </ServiceTitleDesc>
           <ServiceInfo>
             akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd

@@ -71,7 +71,7 @@ margin-left:5%;
 const Review = () => {
   return (
     <Wrapper>
-    <Title>What our Client's say</Title>
+    <Title>What our Clients Say</Title>
         <ReviewWrapper>
    
         <ReviewCard>
