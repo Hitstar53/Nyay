@@ -22,6 +22,7 @@ const ServiceWrapper = styled.div`
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  
 `
 const ServiceImg = styled.div`
   flex: 2;
@@ -90,8 +91,8 @@ const ServiceDescription = () => {
       <ServiceWrapper>
         <ServiceImg>
           <div class='relative w-full max-w-lg'>
-            <div class='absolute top-10 right-10 w-32 h-32 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
-            <div class='absolute top-60 left-10 w-32 h-32 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
+            <div class='absolute top-10 right-10 w-32 h-32 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
+            <div class='absolute top-60 left-10 w-32 h-32 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
           </div>
           <img src={findlawyer}></img>
         </ServiceImg>
@@ -133,7 +134,11 @@ const ServiceDescription = () => {
 
       <ServiceWrapper>
         <ServiceDesc>
+<<<<<<< HEAD
           <ServiceTitle>DOC TRANSLATION</ServiceTitle>
+=======
+          <ServiceTitle>FIND </ServiceTitle>
+>>>>>>> 72eb0ddb63fb8bfe8f92de2f57bc94bf6375635b
           <ServiceTitleDesc>
             Linguistic Support to Facilitate Document Translation{' '}
           </ServiceTitleDesc>
@@ -184,7 +189,7 @@ const ServiceDescription = () => {
         </ServiceImg>
 
         <ServiceDesc>
-          <ServiceTitle>FIND LAWYER</ServiceTitle>
+          <ServiceTitle>FIND RETIRED JUDGES & LAWYERS</ServiceTitle>
           <ServiceTitleDesc>
            Consult Retired Professionals - Lawyers & Judges 
           </ServiceTitleDesc>
