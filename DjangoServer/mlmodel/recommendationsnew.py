@@ -12,8 +12,8 @@ from sklearn.metrics.pairwise import linear_kernel
 
 
 def suggest_lawyers(user_legal_problem, num_lawyers=5):
-    df_legal_problems = pd.read_csv('legal_problems.csv')
-    df_lawyers = pd.read_csv('lawyers.csv')
+    df_legal_problems = pd.read_csv('DjangoServer/legal_problems.csv')
+    df_lawyers = pd.read_csv('DjangoServer/lawyers.csv')
 
     categories = [
         "Bankruptcy Lawyer",
