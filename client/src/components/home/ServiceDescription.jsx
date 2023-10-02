@@ -133,15 +133,12 @@ const ServiceDescription = () => {
 
       <ServiceWrapper>
         <ServiceDesc>
-          <ServiceTitle>FIND LAWYER</ServiceTitle>
+          <ServiceTitle>DOC TRANSLATION</ServiceTitle>
           <ServiceTitleDesc>
-            Hello ASDJFKLASJDF KLAJDSF;LASD A;LDKJF{' '}
+            Linguistic Support to Facilitate Document Translation{' '}
           </ServiceTitleDesc>
           <ServiceInfo>
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
+          Navigate Indian legal complexities effortlessly with our Linguistic Support for Document Translation. Expertise in multiple languages and cultural sensitivity.
           </ServiceInfo>
 
           <ServiceInfoPointers>
@@ -152,7 +149,7 @@ const ServiceDescription = () => {
                 color: 'var(--secondary-color)'
               }}
             />
-            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
+            Securely access and share your legal documents anytime, anywhere.
           </ServiceInfoPointers>
           <ServiceInfoPointers>
             <CheckCircleSharpIcon
@@ -162,7 +159,7 @@ const ServiceDescription = () => {
                 color: 'var(--secondary-color)'
               }}
             />
-            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
+            Easier document accessibility with our user-friendly online platform.
           </ServiceInfoPointers>
 
           <Button>Explore</Button>
