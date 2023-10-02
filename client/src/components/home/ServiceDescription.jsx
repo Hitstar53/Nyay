@@ -22,6 +22,7 @@ const ServiceWrapper = styled.div`
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  
 `
 const ServiceImg = styled.div`
   flex: 2;
@@ -90,8 +91,8 @@ const ServiceDescription = () => {
       <ServiceWrapper>
         <ServiceImg>
           <div class='relative w-full max-w-lg'>
-            <div class='absolute top-10 right-10 w-32 h-32 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
-            <div class='absolute top-60 left-10 w-32 h-32 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
+            <div class='absolute top-10 right-10 w-32 h-32 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
+            <div class='absolute top-60 left-10 w-32 h-32 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
           </div>
           <img src={findlawyer}></img>
         </ServiceImg>
@@ -133,7 +134,7 @@ const ServiceDescription = () => {
 
       <ServiceWrapper>
         <ServiceDesc>
-          <ServiceTitle>FIND LAWYER</ServiceTitle>
+          <ServiceTitle>FIND </ServiceTitle>
           <ServiceTitleDesc>
             Hello ASDJFKLASJDF KLAJDSF;LASD A;LDKJF{' '}
           </ServiceTitleDesc>
@@ -187,7 +188,7 @@ const ServiceDescription = () => {
         </ServiceImg>
 
         <ServiceDesc>
-          <ServiceTitle>FIND LAWYER</ServiceTitle>
+          <ServiceTitle>FIND RETIRED JUDGES & LAWYERS</ServiceTitle>
           <ServiceTitleDesc>
            Consult Retired Professionals - Lawyers & Judges 
           </ServiceTitleDesc>
