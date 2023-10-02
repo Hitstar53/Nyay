@@ -103,9 +103,8 @@ const FindLawyer = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(search)
         const recommended = async () => {
-            const res = await fetch(`${ServerUrl}/recommend/`,{
+            const response = await fetch(`${ServerUrl}/recommend/`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'
@@ -114,9 +113,14 @@ const FindLawyer = () => {
                     prompt: search
                 })
             })
-            const data = await res.json()
-            console.log(data)
-            setLawyer(data)
+            if (!response.ok) {
+                console.log('error')
+            }
+            else {
+                const data = await response.json()
+                console.log(data)
+                setLawyer(data)
+            }
         }
         recommended()
     }
