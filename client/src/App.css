@@ -10,9 +10,6 @@
   }
 }
 
-/* variable for theme switching */
-/* #EEFAFF
-#00117B */
 :root {
   --primary-color: #0D265C;
   --secondary-color: #0B98DA;
@@ -38,6 +35,7 @@
   --pill-color: #ccc;
   --pill-border-color: #ccc;
   --grey-text: #5a5a5a;
+  --star-color:rgb(255, 210, 49);
 }
 
 /* dark theme */

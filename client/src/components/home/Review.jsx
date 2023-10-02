@@ -1,6 +1,7 @@
 import React from 'react'
 import StarIcon from '@mui/icons-material/Star';
 import styled from 'styled-components'
+import profile from '../../assets/imgs/profile.jpg'
 
 const Wrapper = styled.div`
 width:80%;
@@ -46,7 +47,7 @@ width:100%;
 height:20%;
 display:flex;
 `
-const ReviewerImg=styled.div`
+const ReviewerImg=styled.img`
 width:20%;
 height:100%;
 background-color:yellow;
@@ -75,18 +76,19 @@ const Review = () => {
    
         <ReviewCard>
         <StarWrapper>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+   
         </StarWrapper>
         <ReviewContent>
         " jdjfas aflksdjfa kajdsfl jalkdsjfk lkadjsfkls  lajskdf  aldjfasl;d 
         sdlfkjas;dfas laskjdf;asd "  
         </ReviewContent>
         <ReviewerWrapper>
-            <ReviewerImg></ReviewerImg>
+            <ReviewerImg src={profile}></ReviewerImg>
             <ReviewerInfo>
                 <div className='name'>Yash Sonawane</div>
                 <div className='location'>MUMBAI , MH</div>
@@ -96,18 +98,18 @@ const Review = () => {
 
     <ReviewCard>
         <StarWrapper>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
         </StarWrapper>
         <ReviewContent>
         " jdjfas aflksdjfa kajdsfl jalkdsjfk lkadjsfkls  lajskdf  aldjfasl;d 
         sdlfkjas;dfas laskjdf;asd "  
         </ReviewContent>
         <ReviewerWrapper>
-            <ReviewerImg></ReviewerImg>
+        <ReviewerImg src={profile}></ReviewerImg>
             <ReviewerInfo>
                 <div className='name'>Yash Sonawane</div>
                 <div className='location'>MUMBAI , MH</div>
@@ -117,18 +119,18 @@ const Review = () => {
 
     <ReviewCard>
         <StarWrapper>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
         </StarWrapper>
         <ReviewContent>
         " jdjfas aflksdjfa kajdsfl jalkdsjfk lkadjsfkls  lajskdf  aldjfasl;d 
         sdlfkjas;dfas laskjdf;asd "  
         </ReviewContent>
         <ReviewerWrapper>
-            <ReviewerImg></ReviewerImg>
+        <ReviewerImg src={profile}></ReviewerImg>
             <ReviewerInfo>
                 <div className='name'>Yash Sonawane</div>
                 <div className='location'>MUMBAI , MH</div>
@@ -138,18 +140,18 @@ const Review = () => {
 
     <ReviewCard>
         <StarWrapper>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
-        <StarIcon sx={{color:'yellow'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
+        <StarIcon sx={{color:'var(--star-color)'}}/>
         </StarWrapper>
         <ReviewContent>
         " jdjfas aflksdjfa kajdsfl jalkdsjfk lkadjsfkls  lajskdf  aldjfasl;d 
         sdlfkjas;dfas laskjdf;asd "  
         </ReviewContent>
         <ReviewerWrapper>
-            <ReviewerImg></ReviewerImg>
+        <ReviewerImg src={profile}></ReviewerImg>
             <ReviewerInfo>
                 <div className='name'>Yash Sonawane</div>
                 <div className='location'>MUMBAI , MH</div>

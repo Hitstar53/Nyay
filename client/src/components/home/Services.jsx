@@ -20,7 +20,8 @@ height:85%;
 display:flex;
 flex-direction:column;
 align-items:center;
-background-color:var(--primary-color);
+background: rgb(13,38,92);
+background: linear-gradient(145deg, rgba(13,38,92,1) 32%, rgba(12,71,128,1) 64%, rgba(11,152,218,1) 100%);
 border-radius:10px;
 `
 const LableContent = styled.div`

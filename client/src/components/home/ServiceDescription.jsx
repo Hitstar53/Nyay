@@ -260,8 +260,8 @@ const ServiceDescription = () => {
         </ServiceDesc>
         <ServiceImg>
           <div class='relative w-100% max-w-lg'>
-            <div class='absolute top-4 right-0 w-32 h-32 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
-            <div class='absolute top-60 left-0 w-32 h-32 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
+            <div class='absolute top-4 right-0 w-32 h-32 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
+            <div class='absolute top-60 left-0 w-32 h-32 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
           </div>
           <img src={retired}></img>
         </ServiceImg>
