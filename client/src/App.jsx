@@ -11,6 +11,7 @@ import Probono from './components/lawyer/Probono/Probono';
 import FindLawyer from './components/user/findLawyer/FindLawyer';
 import Profile, {loader as ProfileLoader} from './components/lawyer/Profile/Profile';
 import PostBooking from './components/user/postBooking/PostBooking';
+import DocTrans from './components/user/DocTrans';
 import './App.css'
 
 const router = createBrowserRouter([
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
           { path: "home", element: <Home /> },
           { path: "find lawyers", element: <FindLawyer /> },
           { path: "book", element: <PostBooking /> },
+          { path: "upload", element: <DocTrans /> },
         ],
       },
       {

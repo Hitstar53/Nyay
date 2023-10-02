@@ -5,6 +5,7 @@ import findlawyer from '../../assets/imgs/findlawyer.png'
 import translate from '../../assets/imgs/translate.png'
 import legalaid from '../../assets/imgs/legalaid.png'
 import retired from '../../assets/imgs/retired.png'
+
 const Wrapper = styled.div`
   width: 80%;
   height: auto;
@@ -134,11 +135,7 @@ const ServiceDescription = () => {
 
       <ServiceWrapper>
         <ServiceDesc>
-<<<<<<< HEAD
-          <ServiceTitle>DOC TRANSLATION</ServiceTitle>
-=======
-          <ServiceTitle>FIND </ServiceTitle>
->>>>>>> 72eb0ddb63fb8bfe8f92de2f57bc94bf6375635b
+          <ServiceTitle>FIND</ServiceTitle>
           <ServiceTitleDesc>
             Linguistic Support to Facilitate Document Translation{' '}
           </ServiceTitleDesc>
