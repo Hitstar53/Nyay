@@ -47,27 +47,27 @@ const ServiceDesc = styled.div`
   align-items: center;
 `
 const ServiceTitle = styled.div`
-  width: 90%;
+  width: 80%;
   font-weight: 500;
   font-size: 0.8rem;
   color: var(--secondary-color);
 `
 const ServiceTitleDesc = styled.div`
-  width: 90%;
+  width: 80%;
   font-weight: 800;
   font-size: 2.3rem;
   color: var(--primary-color);
 `
 const ServiceInfo = styled.div`
-  width: 90%;
+  width: 80%;
   padding-right: 8%;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.05rem;
   margin: 1.3% 0 1%;
-  color: grey;
+  color:grey;
 `
 const ServiceInfoPointers = styled.div`
-  width: 90%;
+  width: 80%;
   font-weight: 600;
   font-size: 0.9rem;
 `
@@ -75,7 +75,7 @@ const Button = styled.button`
   align-self: flex-start;
   width: 7rem;
   height: 13%;
-  margin: 3% 5% 0;
+  margin: 3% 10% 0;
   border: 2px solid var(--primary-color);
   background-color: var(--primary-color);
   color: white;
@@ -96,36 +96,35 @@ const ServiceDescription = () => {
           <img src={findlawyer}></img>
         </ServiceImg>
         <ServiceDesc>
-          <ServiceTitle>FIND LAWYER</ServiceTitle>
+          <ServiceTitle>FIND PRACTITIONER</ServiceTitle>
           <ServiceTitleDesc>
-            Hello asldkflasdfas;lf asldfkjasd a;lsdfj;lasd l;ajsdfds{' '}
+          Find the Rigth Practitioners for your Exact Legal Needs
           </ServiceTitleDesc>
           <ServiceInfo>
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
+           Simply Describe Your 
+           Legal Issue in the 'Type Case Details Prompt',and We'll Match You with the Right Law Practitioner. 
+          Easy, Accurate Recommendations Tailored to Your Needs ! 
           </ServiceInfo>
 
           <ServiceInfoPointers>
             <CheckCircleSharpIcon
               sx={{
-                margin: '1%',
+                margin: '1%  1% 1% 0',
                 fontSize: '1.3rem',
                 color: 'var(--secondary-color)'
               }}
             />
-            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
+            Access - Trusted , Reliable & Experienced Practitioners
           </ServiceInfoPointers>
           <ServiceInfoPointers>
             <CheckCircleSharpIcon
               sx={{
-                margin: '1%',
+                margin: '1%  1% 1% 0',
                 fontSize: '1.3rem',
                 color: 'var(--secondary-color)'
               }}
             />
-            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
+            Search for Legal Practitioners seamlessly
           </ServiceInfoPointers>
 
           <Button>Explore</Button>
@@ -177,94 +176,49 @@ const ServiceDescription = () => {
         </ServiceImg>
       </ServiceWrapper>
 
+
       <ServiceWrapper>
       <ServiceImg>
-      <div class='relative w-full max-w-lg'>
-            <div class='absolute top-8 right-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
-            <div class='absolute top-60 left-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
-          </div>
-          <img src={legalaid}/>
-        </ServiceImg>
-        <ServiceDesc>
-          <ServiceTitle>FIND LAWYER</ServiceTitle>
-          <ServiceTitleDesc>
-            Hello ASDJFKLASJDF KLAJDSF;LASD A;LDKJF{' '}
-          </ServiceTitleDesc>
-          <ServiceInfo>
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-          </ServiceInfo>
-
-          <ServiceInfoPointers>
-            <CheckCircleSharpIcon
-              sx={{
-                margin: '1%',
-                fontSize: '1.3rem',
-                color: 'var(--secondary-color)'
-              }}
-            />
-            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
-          </ServiceInfoPointers>
-          <ServiceInfoPointers>
-            <CheckCircleSharpIcon
-              sx={{
-                margin: '1%',
-                fontSize: '1.3rem',
-                color: 'var(--secondary-color)'
-              }}
-            />
-            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
-          </ServiceInfoPointers>
-
-          <Button>Explore</Button>
-        </ServiceDesc>
-      </ServiceWrapper>
-
-      <ServiceWrapper>
-        <ServiceDesc>
-          <ServiceTitle>FIND LAWYER</ServiceTitle>
-          <ServiceTitleDesc>
-            Get Access to Quality Legal Practitioners for all your Legal Needs
-          </ServiceTitleDesc>
-          <ServiceInfo>
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-            akljfdasjdf;lasd lajdsf a;lsjdf asdfklj a;lsdfj al;sdj f;sljdfsfd
-          </ServiceInfo>
-
-          <ServiceInfoPointers>
-            <CheckCircleSharpIcon
-              sx={{
-                margin: '1%',
-                fontSize: '1.3rem',
-                color: 'var(--secondary-color)'
-              }}
-            />
-            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
-          </ServiceInfoPointers>
-          <ServiceInfoPointers>
-            <CheckCircleSharpIcon
-              sx={{
-                margin: '1%',
-                fontSize: '1.3rem',
-                color: 'var(--secondary-color)'
-              }}
-            />
-            kalsjdfals;dfj;lasdfja kljads; fjas;d fd
-          </ServiceInfoPointers>
-
-          <Button>Explore</Button>
-        </ServiceDesc>
-        <ServiceImg>
           <div class='relative w-100% max-w-lg'>
             <div class='absolute top-4 right-0 w-32 h-32 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000'></div>
             <div class='absolute top-60 left-0 w-32 h-32 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000'></div>
           </div>
           <img src={retired}></img>
         </ServiceImg>
+
+        <ServiceDesc>
+          <ServiceTitle>FIND LAWYER</ServiceTitle>
+          <ServiceTitleDesc>
+           Consult Retired Professionals - Lawyers & Judges 
+          </ServiceTitleDesc>
+          <ServiceInfo>
+          Unlock affordable legal wisdom without breaking the bank.Access expert advice from retired judges and seasoned lawyers, all at a budget-friendly rate
+          </ServiceInfo>
+
+          <ServiceInfoPointers>
+            <CheckCircleSharpIcon
+              sx={{
+                margin: '1%',
+                fontSize: '1.3rem',
+                color: 'var(--secondary-color)'
+              }}
+            />
+          Lower Consultation Fees 
+          </ServiceInfoPointers>
+          <ServiceInfoPointers>
+            <CheckCircleSharpIcon
+              sx={{
+                margin: '1%',
+                fontSize: '1.3rem',
+                color: 'var(--secondary-color)'
+              }}
+            />
+            Enjoy Faster & Efficient Legal Advice
+          </ServiceInfoPointers>
+          
+          <Button>Explore</Button>
+        </ServiceDesc>
+      
       </ServiceWrapper>
 
     </Wrapper>
