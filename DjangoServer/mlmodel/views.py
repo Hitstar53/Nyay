@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import HttpResponse
-from . import recommendationsnew
+from . import recommendationsnew, translation
 from . import legal
 import pandas as pd
 
@@ -24,3 +24,9 @@ class RecommendView(APIView):
         # print(dictionary)
         #send a response with status code 200 (OK)
         return Response({"message": "Got some data!", "data": dictionary})
+    
+class TranslationView(APIView):
+    def post(self, request):
+        file = request.data.get("file")
+        translated_file = translation.translate(file, "TranslatedLegalDoc.pdf")
+        return Response({"message": "Got some data!", "data": translated_file})

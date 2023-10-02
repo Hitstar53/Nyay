@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mlmodel.views import ResearchView, RecommendView
+from mlmodel.views import ResearchView, RecommendView, TranslationView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ResearchView.as_view(), name="research"),
     path('recommend/', RecommendView.as_view(), name="recommend"),
+    path('translation/', TranslationView.as_view(), name="translation"),   
 ]
