@@ -21,7 +21,6 @@ const ServiceWrapper = styled.div`
   display: flex;
   margin-bottom: 7%;
   border-radius: 10px;
-  overflow: hidden;
   position: relative;
   
 `
@@ -135,7 +134,7 @@ const ServiceDescription = () => {
 
       <ServiceWrapper>
         <ServiceDesc>
-          <ServiceTitle>FIND</ServiceTitle>
+          <ServiceTitle>TRANSLATE DOCUMENTS</ServiceTitle>
           <ServiceTitleDesc>
             Linguistic Support to Facilitate Document Translation{' '}
           </ServiceTitleDesc>

@@ -159,7 +159,7 @@ const TestimonialDesc = styled.div`
 const ProBono = () => {
   return (
     <Wrapper>
-      <ServiceTitle>PRO-BONO</ServiceTitle>
+      <ServiceTitle>LEGAL AID</ServiceTitle>
       {/* <ServiceTitleDesc>Apply for Legal-Aid</ServiceTitleDesc> */}
 
       <Container>
