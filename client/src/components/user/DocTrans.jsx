@@ -8,6 +8,8 @@ const DocTrans = () => {
   const [file, setFile] = useState(null);
   const handleChange = (file) => {
     setFile(file);
+    const formData = new FormData();
+    formData.append("file", file);
     //download the file
     // const url = window.URL.createObjectURL(new Blob([file]));
     // const link = document.createElement("a");
@@ -18,12 +20,7 @@ const DocTrans = () => {
     const docTranslate = async () => {
       const response = await fetch(`${DjangoUrl}/translation/`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          file: file,
-        }),
+        body: formData,
       });
       if (!response.ok) {
         console.log("error");
