@@ -14,13 +14,15 @@ const Profile = () => {
   const data = useLoaderData();
   return (
     <div className={styles.profilePage}>
-      <PersonalInfo info={data.primaryData} />
-      <SkillSet />
-      <LicenseInfo info={data.primaryData.licenseInfo} />
-      <EducationInfo info={data.primaryData.educationInfo}/>
-      <NotableCases />
-      <Publications />
-      <Awards />
+      <div className={styles.profileContent}>
+        <PersonalInfo info={data.primaryData} />
+        <SkillSet />
+        <LicenseInfo info={data.primaryData.licenseInfo} />
+        <EducationInfo info={data.primaryData.educationInfo} />
+        <NotableCases />
+        <Publications />
+        <Awards />
+      </div>
     </div>
   )
 }
