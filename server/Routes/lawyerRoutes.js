@@ -2,6 +2,7 @@ import express from 'express';
 import {getApt, aptAccepted, aptDeclined} from '../Controllers/aptController.js';
 import {postUpdate, getUpdate, updateUpdate, deleteUpdate} from '../Controllers/trackerController.js';
 import {createLawyer, getLawyer, updateLawyer, deleteLawyer, deleteApt} from '../Controllers/lawyerController.js';
+import {io, emailToSocketIdMap, socketIdToEmailMap} from '../Controllers/videoController.js';
 
 const router = express.Router();
 router.route('/register').post(createLawyer);
