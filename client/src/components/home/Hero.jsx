@@ -28,6 +28,7 @@ padding: 0 0;
 span{
   width:60%;
   margin-left:15%;
+  padding:none;
 }
 .herotitle{
   font-weight:900;
@@ -71,7 +72,7 @@ span{
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
     background-size: 300% auto;
-    animation: textShine 5s ease-in-out infinite alternate;
+    animation: textShine 3s ease-in-out infinite alternate;
     @keyframes textShine {
     0% {
         background-position: 0% 50%;
@@ -83,8 +84,8 @@ span{
 }
 .description{
   font-weight:500;
-  font-size:1rem;
-  margin-top:1%;
+  font-size:1.2rem;
+  margin-top:2%;
   color:grey;
 }
 `
@@ -92,7 +93,7 @@ const Tab = styled.div`
 width:89%;
 height:30%;
 background-color:white;
-margin:2% 0 0 15% ;
+margin:3% 0 0 15% ;
 z-index:3;
 border-radius:0 20px 20px;
 display:flex;
@@ -194,7 +195,7 @@ const Hero = () => {
     <HeroContent>
       <span className="herotitle">JUSTICE</span>
       <span className="tagline">Now served at Home !</span>
-      <span className="description">" Find your Legal Practitioners from the comfort of your Home , Book appointments and get your legal queries resolved " </span>
+      <span className="description"> Book Appointments with Legal Practitioners for all your Legal Needs</span>
       <Tab>
       <TopContainer>
         <div className="title">Book Appointment</div>
