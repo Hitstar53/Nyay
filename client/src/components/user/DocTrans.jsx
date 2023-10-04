@@ -25,15 +25,15 @@ const DocTrans = () => {
       if (!response.ok) {
         console.log("error");
       } else {
-        const data = await response.json();
-        console.log(data);
+        console.log("success");
+        console.log(response);
       }
     };
     docTranslate();
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1>Upload your file here</h1>
+    <div className="flex flex-col items-center justify-start h-screen">
+      <h1 className="text-2xl font-semibold text-gray-800 mt-10 mb-4">Upload your file here</h1>
       <FileUploader handleChange={handleChange} name="file" types={fileTypes} />
     </div>
   );

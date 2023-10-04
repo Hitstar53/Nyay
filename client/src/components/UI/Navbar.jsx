@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useNavigate, useLocation, NavLink } from "react-router-dom";
+import { useSocket } from "../../context/SocketProvider"
 import PropTypes from "prop-types";
 import MediaQuery, { useMediaQuery } from "react-responsive";
 import AppBar from "@mui/material/AppBar";
@@ -35,6 +36,8 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import GradeRoundedIcon from "@mui/icons-material/GradeRounded";
+import EventIcon from "@mui/icons-material/Event";
+import PictureAsPdfRoundedIcon from "@mui/icons-material/PictureAsPdfRounded";
 
 const navItems = ["Home", "Find Lawyers", "Feed", "Research", "Probono"];
 
@@ -128,6 +131,34 @@ export default function NavBar(props) {
       }
       setState({ ...state, [anchor]: open });
     };
+
+    const [email, setEmail] = React.useState("hatim.sawai@spit.ac.in");
+    const [room, setRoom] = React.useState(1);
+
+    const socket = useSocket();
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+      socket.emit("room:join", { email, room });
+      setEmail("vineet.parmar@spit.ac.in");
+      socket.emit("room:join", { email, room });
+    };
+
+    const handleJoinRoom = React.useCallback(
+      (data) => {
+        const { email, room } = data;
+        navigate(`/chat`);
+      },
+      [navigate]
+    );
+
+    React.useEffect(() => {
+      socket.on("room:join", handleJoinRoom);
+      return () => {
+        socket.off("room:join", handleJoinRoom);
+      };
+    }, [socket, handleJoinRoom]);
+    
     const list = (anchor) => (
       <Box
         sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 272 }}
@@ -270,15 +301,42 @@ export default function NavBar(props) {
               </ListItem>
             </NavLink>
             <NavLink
-              to="/lawyer/messages"
+              to="/chat"
               style={{ textDecoration: "none", color: "inherit" }}
+              onClick={handleClick}
             >
               <ListItem key="Chat" disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
                     <ChatRoundedIcon />
                   </ListItemIcon>
-                  <ListItemText primary="Chat" />
+                  <ListItemText primary="Video Conference" />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/user/myappointments"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItem key="My Appointments" disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <EventIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="My Appointments" />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+            <NavLink
+              to="/user/upload"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItem key="Document Translation" disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PictureAsPdfRoundedIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Document Translation" />
                 </ListItemButton>
               </ListItem>
             </NavLink>

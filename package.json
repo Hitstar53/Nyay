@@ -9,6 +9,7 @@
     "client": "npm run dev --prefix client",
     "django": "python DjangoServer/manage.py runserver",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "rest": "concurrently \"npm run client\" \"npm run django\"",
     "all": "concurrently \"npm run server\" \"npm run client\" \"npm run django\""
   },
   "keywords": [],

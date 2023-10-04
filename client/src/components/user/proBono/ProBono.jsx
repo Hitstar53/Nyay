@@ -194,8 +194,8 @@ const ProBonoCardContainer = styled.div`
   h1{
     width:85%;
     font-weight:700;
-    font-size:1.5rem;
-    margin:2%;
+    font-size:1.7rem;
+    margin:3%;
     color:var(--primary-color);
   }
   .wrap {

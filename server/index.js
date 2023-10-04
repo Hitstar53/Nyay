@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import connectDB from './Config/dbSetup.js';
 import userRoute from './Routes/userRoutes.js';
 import lawyerRoute from './Routes/lawyerRoutes.js';
-const { Server } = require("socket.io");
+import { Server } from "socket.io";
 
 const io = new Server(8000, {
   cors: true,

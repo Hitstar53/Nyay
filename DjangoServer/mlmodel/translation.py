@@ -3,6 +3,7 @@ import docx
 from deep_translator import GoogleTranslator
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfgen import canvas
 from docx2pdf import convert
 from io import BytesIO  # Add this import for working with file-like objects
 
@@ -66,9 +67,28 @@ def translate(pdf_file):
     convert(docx_file_path)
 
     print('PDF file converted successfully.')
+    
+    # Create a BytesIO object to store the PDF content
+    translated_pdf = BytesIO()
 
-# Example usage:
-# pdf_file_path = 'LegalDoc.pdf'  # Replace with your PDF file path
-# translate(pdf_file_path)
+    # Create a PDF canvas
+    c = canvas.Canvas(translated_pdf)
+    
+    # Set font and size
+    c.setFont(font_name, 12)
 
-# You can now call the function with either a file path or a BytesIO object.
+    # Split the translated text into lines
+    lines = translated_text.split("\n")
+
+    # Write each line to the PDF
+    for line in lines:
+        c.drawString(100, 700, line)
+        c.showPage()  # Start a new page for each line
+
+    # Save the PDF content
+    c.save()
+
+    # Move the BytesIO position to the beginning
+    translated_pdf.seek(0)
+
+    return translated_pdf

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.core.files import File
 from django.http import FileResponse
+from django.core.files import File
 from . import recommendationsnew, translation
 from . import legal
 import tempfile, os
@@ -34,5 +34,10 @@ class TranslationView(APIView):
         # convert the file to bytesIO object
         uploaded_file = uploaded_file.read()
         uploaded_file = BytesIO(uploaded_file)
-        translation.translate(uploaded_file)
-        return Response({"message": "Got some data!"})
+        translated_pdf = translation.translate(uploaded_file)
+        translated_pdf = File(translated_pdf)
+        # send the file as Response
+        response = FileResponse(translated_pdf, content_type='application/pdf')
+        # Set content-disposition header to prompt download
+        return response
+        

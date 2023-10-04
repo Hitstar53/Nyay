@@ -107,19 +107,20 @@ const Services = () => {
       <ServiceTitle>Translate Docs</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
-    <ServicesCard>
 
-      <ServiceIcon src={care}/>
-      <ServiceTitle>Apply for Legal Aid</ServiceTitle>
-      <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
-    </ServicesCard>
+
     <ServicesCard>
-    
       <ServiceIcon src={walking}/>
       <ServiceTitle>Find Retired Judges</ServiceTitle>
       <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
     </ServicesCard>
 
+
+    <ServicesCard>
+      <ServiceIcon src={care}/>
+      <ServiceTitle>Apply for Legal Aid</ServiceTitle>
+      <ServiceDesc>Find Practitioners based on Your Legal Problem and Location</ServiceDesc>
+    </ServicesCard>
   
     </ServicesCardHolder>
    

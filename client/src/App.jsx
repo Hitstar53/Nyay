@@ -13,6 +13,9 @@ import ProBono from './components/user/proBono/ProBono';
 import Profile, {loader as ProfileLoader} from './components/lawyer/Profile/Profile';
 import PostBooking from './components/user/postBooking/PostBooking';
 import DocTrans from './components/user/DocTrans';
+import Call from './components/VidConf/Call';
+import MyAppointments from './components/user/MyAppointments';
+import { SocketProvider } from './context/SocketProvider'
 import './App.css'
 
 const router = createBrowserRouter([
@@ -22,8 +25,8 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { path: "login", element: <Login /> },
-      { path: "home", element: <Home /> },
       { index: true, element: <Home /> },
+      { path: "chat", element: <Call /> },
       {
         path: "user",
         children: [
@@ -32,6 +35,7 @@ const router = createBrowserRouter([
           { path: "probono", element: <ProBono /> },
           { path: "book", element: <PostBooking /> },
           { path: "upload", element: <DocTrans /> },
+          { path: "myappointments", element: <MyAppointments /> },
         ],
       },
       {
@@ -54,9 +58,11 @@ const App = () => {
     },
   });
   return (
-    <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <SocketProvider>
+      <ThemeProvider theme={theme}>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </SocketProvider>
   );
 }
 
