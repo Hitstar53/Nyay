@@ -9,6 +9,7 @@ import Dashboard, {loader as DashboardLoader} from './components/lawyer/Dashboar
 import ResearchAid from './components/lawyer/Research/ResearchAid';
 import Probono from './components/lawyer/Probono/Probono';
 import FindLawyer from './components/user/findLawyer/FindLawyer';
+import ProBono from './components/user/proBono/ProBono';
 import Profile, {loader as ProfileLoader} from './components/lawyer/Profile/Profile';
 import PostBooking from './components/user/postBooking/PostBooking';
 import DocTrans from './components/user/DocTrans';
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
         children: [
           { path: "home", element: <Home /> },
           { path: "find lawyers", element: <FindLawyer /> },
+          { path: "probono", element: <ProBono /> },
           { path: "book", element: <PostBooking /> },
           { path: "upload", element: <DocTrans /> },
         ],

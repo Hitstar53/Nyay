@@ -58,9 +58,6 @@ width:85%;
 margin:5%;
 `
 const CategoryCardTitle=styled.div`
-display:flex;
-flex-directon:column;
-justify-content:center;
 font-weight:600;
 font-size:13px;
 color:#0d265c;
