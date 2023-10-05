@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.http import FileResponse
+from django.http import FileResponse, JsonResponse
+import base64
 from django.core.files import File
 from . import recommendationsnew, translation
 from . import legal
 import tempfile, os
 from io import BytesIO
-
+import pythoncom
+import json
 # Create your views here.
 
 class ResearchView(APIView):
@@ -29,15 +31,15 @@ class RecommendView(APIView):
     
 class TranslationView(APIView):
     def post(self, request):
+        pythoncom.CoInitialize()
         uploaded_file = request.data.get("file")
         print(uploaded_file)
         # convert the file to bytesIO object
         uploaded_file = uploaded_file.read()
         uploaded_file = BytesIO(uploaded_file)
-        translated_pdf = translation.translate(uploaded_file)
-        translated_pdf = File(translated_pdf)
-        # send the file as Response
-        response = FileResponse(translated_pdf, content_type='application/pdf')
-        # Set content-disposition header to prompt download
-        return response
+        path = translation.translate(uploaded_file)
+        return JsonResponse({'name':'translated.pdf', 'path':path})
+    
+pythoncom.CoUninitialize()      
+        
         

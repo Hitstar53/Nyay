@@ -1,11 +1,13 @@
 import PyPDF2
+from django.http import HttpResponse, JsonResponse
 import docx
 from deep_translator import GoogleTranslator
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from docx2pdf import convert
-from io import BytesIO  # Add this import for working with file-like objects
+from io import BytesIO
+from django.utils.encoding import smart_str
 
 font_name = "Devanagari"  # Change this to your Hindi font name
 pdfmetrics.registerFont(TTFont(font_name, f"DjangoServer/{font_name}.ttf"))
@@ -65,30 +67,5 @@ def translate(pdf_file):
 
     # Convert the Word document to PDF
     convert(docx_file_path)
-
-    print('PDF file converted successfully.')
-    
-    # Create a BytesIO object to store the PDF content
-    translated_pdf = BytesIO()
-
-    # Create a PDF canvas
-    c = canvas.Canvas(translated_pdf)
-    
-    # Set font and size
-    c.setFont(font_name, 12)
-
-    # Split the translated text into lines
-    lines = translated_text.split("\n")
-
-    # Write each line to the PDF
-    for line in lines:
-        c.drawString(100, 700, line)
-        c.showPage()  # Start a new page for each line
-
-    # Save the PDF content
-    c.save()
-
-    # Move the BytesIO position to the beginning
-    translated_pdf.seek(0)
-
-    return translated_pdf
+    pdf_file_path = 'translated.pdf'
+    return pdf_file_path
