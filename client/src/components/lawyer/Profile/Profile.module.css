@@ -1,0 +1,11 @@
+.profilePage {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.profileContent {
+    margin: 2rem 0rem;
+    width: 80%;
+}

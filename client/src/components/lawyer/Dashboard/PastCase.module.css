@@ -1,0 +1,57 @@
+.caseCard {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    padding: 2rem;
+    color: var(--text-light);
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--text-color);
+    background-color: lightgrey;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardHeader h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.cardHearing {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cardDates p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.cardDates p:hover {
+    background-color: darkgray;
+    color: var(--text-color);
+}
+
+.carddesc {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.cardName {
+    font-size: 1.25rem;
+    font-weight: 500;
+}

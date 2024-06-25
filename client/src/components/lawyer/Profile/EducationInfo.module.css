@@ -1,0 +1,19 @@
+.heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 3rem 0 1rem 0;
+}
+
+.infoContainer {
+    border: solid 0.05rem var(--primary-color);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    background-color: var(--bg-light);
+}
+
+.label {
+    font-weight: 700;
+}
